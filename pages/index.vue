@@ -1,97 +1,55 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+   <section class="cover">
+     <div class="cover__main-box">
+        <h1>SOME CONTENT</h1>
+        <h3>Chamada</h3>
+     </div>
+     <div class="cover__box-up">
+       <h1>SOME CONTENT</h1>
+        <h3>Chamada</h3>
+     </div>
+     <div class="cover__box-down">
+       <h1>SOME CONTENT</h1>
+        <h3>Chamada</h3>
+     </div>
+   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
+
 }
 </script>
+<style lang="scss">
+  .cover{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    padding: 0 5%;
+
+    &__main-box{
+      grid-column: 1/5;
+      grid-row: 1/3;
+      background-color: brown;
+      width: 100%;
+      height: 65vh;
+     
+    }
+
+    &__box-up{
+      grid-column: 5/-1;
+      grid-row: 1/2;
+      background-color: rgb(118, 177, 162);
+      width: 100%;
+    }
+
+    &__box-down{
+      grid-column: 5/-1;
+      grid-row: 2/3;
+      background-color: rgb(80, 71, 209);
+      width: 100%;
+
+    }
+  }
+
+</style>

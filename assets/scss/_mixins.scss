@@ -1,0 +1,14 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin line($height, $margin){
+    content: "";
+    height: $height;
+    background-color: black;
+    display: block;
+    width: 100%;
+    margin: $margin;
+}
