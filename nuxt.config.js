@@ -24,8 +24,9 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-     /*  { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, */
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Nunito:wght@300;400&display=swap'}
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Raleway:wght@300;700;900&display=swap'},
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap'}
     ]
   },
   /*
