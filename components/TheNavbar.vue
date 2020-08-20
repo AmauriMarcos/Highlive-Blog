@@ -3,29 +3,35 @@
        <div class="header__brand">
             <h1 class="header__brand--title">High<span>live</span></h1>
         </div>
-         <ul class="header__list">
-             <div class='line'></div>
-             <li class="header__item">
-                <a href="#" class="header__link">Home</a>
-            </li>
+         <div class='line'></div>
+         <ul class="header__list" >     
+             <li class="header__item" v-for='(category, i) in categories' :key='i'>
+                <a href="#" class="header__link">{{category.name}}</a>
+            </li>    
             <li class="header__item">
-                <a href="#" class="header__link">Tecnologia</a>
-            </li>
+                <a href="#" class="header__link">About</a>
+            </li>   
             <li class="header__item">
-                <a href="#" class="header__link">Estilo de Vida</a>
-            </li>
-            <li class="header__item">
-                <a href="#" class="header__link">Cotidiano</a>
-            </li>
-            <li class="header__item">
-                <a href="#" class="header__link">Games</a>
-            </li>
+                <a href="#" class="header__link">Contact</a>
+            </li>   
         </ul>
     </div>
 </template>
 <script>
+import axios from "axios";
 export default {
-    
+    data(){
+        return{
+            categories: []
+        }
+    },
+    async created(){
+        const res = await axios.get("https://amauri-blog.herokuapp.com/categories")
+        const myData = res.data;
+        myData.map((data) =>{
+            this.categories.push(data)
+        })
+    }
 }
 </script>
 <style lang="scss">
@@ -80,7 +86,7 @@ export default {
         border-bottom: 1px solid black;
         justify-content: space-around;
         width: 80vw;
-        padding: 1rem 2rem;        
+        padding: 1rem 2rem;  
        
     }
 
@@ -98,6 +104,8 @@ export default {
        font-weight: 300;
        text-transform: uppercase;
        font-size: 1rem;
+       position: relative;
+
        
     }
 

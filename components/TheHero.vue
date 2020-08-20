@@ -1,24 +1,21 @@
 <template>
-    <div>
-        <div class="destaques">
-            <div class="destaques__principal">
-               <!--  <img :src="`${this.destaques[1].image[0].name}`" alt=""> -->
-                <img src="https://images.unsplash.com/photo-1498262257252-c282316270bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&auto=format&fit=crop&w=500&q=60" alt="">
-                <div class="white-box">
-                    <h1 class="white-box__title">{{destaques[0].title}}</h1>
-                </div>
+    <div class="destaques">
+        <div class="destaques__principal">
+            <img :src="`${destaques[0].image[0].name}`" alt="">
+            <div class="white-box">
+                <h1 class="white-box__title">{{destaques[0].title}}</h1>
             </div>
-            <div class="destaques__cima">
-                <img src="https://images.unsplash.com/photo-1531772290195-0d46f4200951?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80" alt="">
-                <div class="white-box">
-                    <h1 class="white-box__title">{{destaques[1].title}}</h1>
-                </div>
+        </div>
+        <div class="destaques__cima">
+            <img :src="`${destaques[1].image[0].name}`" alt="">
+            <div class="white-box">
+                <h1 class="white-box__title">{{destaques[1].title}}</h1>
             </div>
-            <div class="destaques__baixo">
-                <img src="https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80" alt="">
-                <div class="white-box">
-                    <h1 class="white-box__title">{{destaques[2].title}}</h1>
-                </div>
+        </div>
+        <div class="destaques__baixo">
+            <img :src="`${destaques[2].image[0].name}`" alt="">
+            <div class="white-box">
+                <h1 class="white-box__title">{{destaques[2].title}}</h1>
             </div>
         </div>
     </div>
@@ -34,8 +31,10 @@ export default {
     },
     async fetch(){
         const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
-        const news = res.data.slice(-3)
-        this.destaques = news
+        const news = res.data;
+        news.slice(-3).map((destaque) =>{
+            this.destaques.push(destaque);
+        })
     }
 }
 </script>
@@ -87,7 +86,7 @@ export default {
                 &__title{
                     font-family: 'Playfair Display', serif;
                     font-weight: 400;
-                    font-size: 18px;
+                    font-size: 1.3rem;
                     padding: 1rem 2rem;
                 }
             }
@@ -108,7 +107,7 @@ export default {
                 &__title{
                     font-family: 'Playfair Display', serif;
                     font-weight: 400;
-                    font-size:18px;
+                    font-size: 1.3rem;
                     padding: 1rem 2rem;
                 }
             }
