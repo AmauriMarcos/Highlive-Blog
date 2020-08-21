@@ -20,6 +20,24 @@
         </div>
     </section>
 
+    <section id="newsletter">
+        <Newsletter></Newsletter>
+    </section>
+
+    <section id="boxes">
+      <div class="boxes-div">
+         <div class="box box-1">
+            <p>Arquivos</p>
+        </div>
+        <div class="box box-2">
+            <p>Dicas</p>
+        </div>
+        <div class="box box-3">
+            <p>Projeto 100</p>
+        </div>
+      </div>      
+    </section>
+
   </div> 
 </template>
 
@@ -27,10 +45,12 @@
 import axios from "axios";
 import TheHero from "../components/TheHero";
 import Cards from "../components/Cards";
+import Newsletter from "../components/Newsletter";
 export default {
   components: {
     TheHero,
-    Cards
+    Cards,
+    Newsletter
   },
   data(){
     return{
@@ -119,5 +139,57 @@ export default {
      padding: 2% 9.5%;
      gap: 1rem;
      grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+   }
+
+   #newsletter{
+     padding: 0 9.5% 2% 9.5%;
+
+        &::before{
+          @include line;
+        }
+
+        &::after{
+          @include line;
+          height: .5px;
+        }
+   }
+
+   #boxes{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+     padding: 2% 9.5%;
+     gap: 2rem;
+   }
+
+  .boxes-div{
+    @include center;
+    justify-content: space-around;
+  }
+   .box{
+     width: 370px;
+     height: 260px;
+     display: inline-block;
+     position: relative;
+
+     & p{
+       @include whiteBox;
+       @include sub-titulo;
+       padding: 0.7rem 1rem;
+       width: 60%;
+       text-transform: uppercase;
+     }
+   }
+
+   .box-1{
+     background: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80');
+     @include box;
+   }
+   .box-2{
+     background: url('https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+     @include box;
+   }
+   .box-3{
+     background: url('https://images.unsplash.com/photo-1517963628607-235ccdd5476c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80');
+     @include box;
    }
 </style>

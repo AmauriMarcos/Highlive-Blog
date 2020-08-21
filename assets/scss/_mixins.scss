@@ -84,3 +84,9 @@
     font-weight: 300;      
     text-align: $text-align; 
 }
+
+@mixin box{
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}

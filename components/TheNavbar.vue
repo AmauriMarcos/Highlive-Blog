@@ -9,10 +9,10 @@
                 <a href="#" class="header__link">{{category.name}}</a>
             </li>    
             <li class="header__item">
-                <a href="#" class="header__link">About</a>
+                <a href="#" class="header__link">Sobre</a>
             </li>   
             <li class="header__item">
-                <a href="#" class="header__link">Contact</a>
+                <a href="#" class="header__link">Contato</a>
             </li>   
         </ul>
     </div>
