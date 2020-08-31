@@ -1,12 +1,18 @@
 <template>
     <div class="header">
+       
        <div class="header__brand">
-            <h1 class="header__brand--title">High<span>live</span></h1>
+            <nuxt-link to='/' class="wrap-link">
+                <h1 class="header__brand--title">High<span>live</span></h1>
+            </nuxt-link>
         </div>
+       
          <div class='line'></div>
          <ul class="header__list" >     
              <li class="header__item" v-for='(category, i) in categories' :key='i'>
-                <a href="#" class="header__link">{{category.name}}</a>
+                <nuxt-link :to="`/${category.name}`" class="wrap-link"> 
+                    <a href="#" class="header__link">{{category.name}}</a>
+                </nuxt-link>  
             </li>    
             <li class="header__item">
                 <a href="#" class="header__link">Sobre</a>

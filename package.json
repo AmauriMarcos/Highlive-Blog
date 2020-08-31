@@ -9,9 +9,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/vuetify": "^1.11.2",
     "axios": "^0.19.2",
+    "markdown-it-attrs": "^3.0.3",
+    "markdown-it-highlightjs": "^3.2.0",
     "nuxt": "^2.14.0"
   },
   "devDependencies": {

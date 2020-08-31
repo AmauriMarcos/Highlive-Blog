@@ -6,17 +6,19 @@
 
     <section id="white-articles">
       <div v-for='(article, i) in articles' :key='i'>
-          <div class="bloco-article">
-             <h2>{{article.title}}</h2>
-             <p>{{article.description}}</p>
-             <button>Saiba mais</button>
-          </div>
-      </div>
+         <nuxt-link :to="`/${article.id}`" class="wrap-link">
+            <div class="bloco-article">
+              <h2>{{article.title}}</h2>
+              <p>{{article.description}}</p>
+              <button>Continuar lendo</button>
+            </div>
+          </nuxt-link>
+      </div>   
     </section>
 
     <section id="cards">
         <div v-for="(card, i) in cards " :key='i'>
-            <Cards :title='card.title' :category='card.categories[0].name' :image='card.image[0].name'></Cards>
+            <Cards :title='card.title' :category='card.categories[0].name' :image='card.image[0].name' :id='card.id'></Cards>
         </div>
     </section>
 
@@ -26,49 +28,75 @@
 
     <section id="boxes">
       <div class="boxes-div">
-         <div class="box box-1">
-            <p>Arquivos</p>
+         <div class="thebox thebox-1">
+           <nuxt-link  tag="a" to="/posts" class="wrap-link">
+              <p>Arquivos</p>
+           </nuxt-link> 
         </div>
-        <div class="box box-2">
+
+        <div class="thebox thebox-2">
             <p>Dicas</p>
         </div>
-        <div class="box box-3">
+
+        <div class="thebox thebox-3">
+          <nuxt-link  tag="a" to="/projeto-100" class="wrap-link">
             <p>Projeto 100</p>
+          </nuxt-link> 
         </div>
       </div>      
+    </section>
+
+    <section id="horizontal-articles">
+      <div v-for="(horizontal, i) in horizontals" :key="i" class="horizontal-box">
+         <HorizontalArticle
+            :title='horizontal.title'
+            :image='horizontal.image[0].name'
+            :body='horizontal.body'
+            :category='horizontal.categories[0].name'
+            :id='horizontal.id'
+         ></HorizontalArticle>
+      </div>
     </section>
 
   </div> 
 </template>
 
 <script>
-import axios from "axios";
-import TheHero from "../components/TheHero";
-import Cards from "../components/Cards";
-import Newsletter from "../components/Newsletter";
-export default {
-  components: {
-    TheHero,
-    Cards,
-    Newsletter
-  },
-  data(){
-    return{
-      articles: [],
-      cards: []
-    }
-  },
-  async created(){
-    const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
-    const articles = res.data.slice(0,1)
-    this.articles  = articles
+  import axios from "axios";
+  import HorizontalArticle from "../components/HorizontalArticle";
+  import TheHero from "../components/TheHero";
+  import Cards from "../components/Cards";
+  import Newsletter from "../components/Newsletter";
+  export default {
+    components: {
+      TheHero,
+      Cards,
+      Newsletter,
+      HorizontalArticle
+    },
+    data(){
+      return{
+        articles: [],
+        cards: [],
+        horizontals: []
+      }
+    },
+    async created(){
+      const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
+      const request1 = res;
+      const request2 = res;
+      const request3 = res;
 
-    const result   = await axios.get("https://amauri-blog.herokuapp.com/posts")
-    const myCards  = result.data;
-    myCards.slice(1,4).map((card) =>{
-        this.cards.push(card)
-    })
-  }
+      const articles = request1.data.slice(0,1)
+      this.articles  = articles
+
+     request2.data.slice(3,6).map((card) =>{
+          this.cards.push(card)
+      })
+
+      this.horizontals  = request3.data.slice(0,5)
+
+    }
 
 }
 </script>
@@ -116,17 +144,7 @@ export default {
         }
 
         & button{
-          border: none;
-          font-family: 'Open Sans', sans-serif;
-          padding: .2rem 0;
-          font-weight: 300;
-          text-transform: uppercase;
-          display: flex;
-          justify-self: center;
-          outline: none;
-          position: relative;
-          font-size: .9rem;
-          margin-top: 1rem;
+          @include buttonArticle;
 
           &::after{
              @include line-bottom;            
@@ -165,7 +183,7 @@ export default {
     @include center;
     justify-content: space-around;
   }
-   .box{
+   .thebox{
      width: 370px;
      height: 260px;
      display: inline-block;
@@ -180,16 +198,28 @@ export default {
      }
    }
 
-   .box-1{
+   .thebox-1{
      background: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80');
      @include box;
    }
-   .box-2{
+   .thebox-2{
      background: url('https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
      @include box;
    }
-   .box-3{
+   .thebox-3{
      background: url('https://images.unsplash.com/photo-1517963628607-235ccdd5476c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80');
      @include box;
    }
+
+   #horizontal-articles{
+     display: flex;
+     flex-direction: column; 
+     margin-top: 2%;
+     
+     &::after{
+       @include line;
+     }
+   }
+
+  
 </style>
