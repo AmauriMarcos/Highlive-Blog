@@ -11,8 +11,7 @@
                 <p>{{article.description}}</p>
             </div>  
             <div class="article__content-body">
-               <p v-html="content">{{content}}</p>
-               
+               <p v-html="content">{{content}}</p>           
             </div> 
                 
         </div>
@@ -57,12 +56,8 @@ const md = require('markdown-it')({
 .use(require('markdown-it-attrs'));
 
 //Hyvor Talks code
-var HYVOR_TALK_WEBSITE = 1833; // DO NOT CHANGE THIS
-    var HYVOR_TALK_CONFIG = {
-        url: `https://highlive.netlify.app/${this.$route.params.id}`,
-        id: this.$route.params.id
-    };
-console.log(this.$route.params.id)
+/* */
+
 import axios from "axios";
 import Search from "../../components/Search";
 export default {
@@ -81,7 +76,8 @@ export default {
             article: [],
             url: '',
             tags: [],
-            content: ''
+            content: '',
+            theID: this.$route.params.id
         }
     },
     async created(){
@@ -93,6 +89,13 @@ export default {
         this.tags = result.data
 
          this.content = md.render(res.data.body);  
+    },
+    mounted(){
+        var HYVOR_TALK_WEBSITE = 1833; // DO NOT CHANGE THIS
+        var HYVOR_TALK_CONFIG = {
+        url: `https://highlive.netlify.app/${this.$route.params.id}`,
+        id: this.$route.params.id
+    }; 
     }
 }
 </script>
