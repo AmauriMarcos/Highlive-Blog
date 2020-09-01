@@ -1,6 +1,6 @@
 <template>
     <div class="contato">
-        <h2 class="contato__title">Tá querendo conversar, é?</h2>
+        <h2 class="contato__title">Vamos bater um papo!</h2>
         <form   @submit.prevent='submitForm' 
                 action="/" 
                 class="contato__form"
@@ -86,13 +86,13 @@ export default {
 
 <style lang="scss">
     .contato{
-        height: 75vh;
+        height: 70vh;
         @include center;
         flex-direction: column;
 
         &__title{
             @include sub-titulo;
-            font-size: 2rem;
+            font-size: 2.3rem;
         }
 
         &__form{
@@ -102,7 +102,7 @@ export default {
 
             &-label{
                 font-size: .7rem;
-                transform: translate(-7.5rem);
+                transform: translate(-7.9rem);
                 font-family: 'Open Sans', sans-serif;
                 font-size: 300;
             }
@@ -114,14 +114,14 @@ export default {
                 outline: none;
                 width: 20rem;
                 margin-bottom: .5rem;
-                border-radius: 3px;
+                border-radius: 2px;
             }
 
             &-message{
                 border: 1px solid black;
                 outline: none;
                 width: 20rem;
-                border-radius: 3px;
+                border-radius: 2px;
                 resize: none;
                 height: 8rem;
             }
@@ -134,7 +134,7 @@ export default {
                 outline: none;
                 width: 20rem;
                 margin-top: 1rem;
-                border-radius: 3px;
+                border-radius: 2px;
                 text-transform: uppercase;
                 font-weight: 300;
             }

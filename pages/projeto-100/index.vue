@@ -55,6 +55,7 @@ export default {
        height: 70vh;
        width: 100%;
        padding: 2% 9.5%;
+       margin-top: 2rem;
        background: linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80");
        background-size: cover;
        background-repeat: no-repeat;
