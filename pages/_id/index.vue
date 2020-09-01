@@ -11,16 +11,13 @@
                 <p>{{article.description}}</p>
             </div>  
             <div class="article__content-body">
-               <p v-html="content">{{content}}</p>           
+               <p v-html="content">{{content}}</p>     
+               <h2 class="comentario-titulo">Deixe um comentário</h2>     
+                <div class="fb-comments" data-href="https://highlive.netlify.app/" data-numposts="5" data-width="955"></div> 
             </div> 
                 
         </div>
-
-        <div class="comments">
-            <div id="hyvor-talk-view"></div>  
-        </div>
-         
-
+        
         <div class="article__bio">
             <div class="article__bio-intro">
                 <p>E aí, tudo certo?</p>
@@ -58,19 +55,11 @@ const md = require('markdown-it')({
 .use(require('markdown-it-highlightjs'))
 .use(require('markdown-it-attrs'));
 
-//Hyvor Talks code
-/* */
 
 import axios from "axios";
 import Search from "../../components/Search";
 export default {
-    head: {
-    script: [
-      {
-        src: '//talk.hyvor.com/web-api/embed'
-      }
-    ]
-  },
+
     components: {
         Search
     },
@@ -83,6 +72,21 @@ export default {
             theID: this.$route.params.id
         }
     },
+    mounted(){
+        this.init()    
+    },
+    methods: {
+        init (){
+        if (window.FB) {
+            window.FB.init({
+                appId      : process.env.APP_ID,
+                status     : true,
+                xfbml      : true,
+                version    : 'v3.3'
+            })
+        }
+    }
+    },
     async created(){
         const res = await axios.get(`https://amauri-blog.herokuapp.com/posts/${this.$route.params.id}`)
         this.article = res.data
@@ -93,24 +97,15 @@ export default {
 
          this.content = md.render(res.data.body);  
     },
-    mounted(){
-        var HYVOR_TALK_WEBSITE = 1833; // DO NOT CHANGE THIS
-        var HYVOR_TALK_CONFIG = {
-        url: `https://highlive.netlify.app/${this.$route.params.id}`,
-        id: this.$route.params.id
-    }; 
-    }
+    
 }
 </script>
 
 <style lang="scss">
-.comments{
-    position: absolute;
-    z-index: 400;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-}
+    .comentario-titulo{
+        @include sub-titulo;
+        transform: translateY(1rem);
+    }
     .agua{
         width: 35rem !important;
     }
@@ -298,13 +293,12 @@ export default {
     }
 
     p{
-        margin: 1.5rem 0;   
-        
+        margin: 1.5rem 0;          
     }
 
-   
+  
     .space{
-         height: 800px;
+        height: 800px;
     }
 
    
