@@ -18,7 +18,9 @@
                 <a href="#" class="header__link">Sobre</a>
             </li>   
             <li class="header__item">
-                <a href="#" class="header__link">Contato</a>
+                <nuxt-link to="/contato" class="wrap-link"> 
+                    <a href="#" class="header__link">Contato</a>
+                </nuxt-link> 
             </li>   
         </ul>
     </div>
