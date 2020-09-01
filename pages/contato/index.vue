@@ -49,7 +49,7 @@ export default {
             .join('&')
         },
 
-        handleSubmit(){
+        submitForm(){
      
             fetch('/', {
                 method: 'post',
@@ -122,6 +122,8 @@ export default {
                 outline: none;
                 width: 20rem;
                 border-radius: 3px;
+                resize: none;
+                height: 10rem;
             }
 
             &-btn{
