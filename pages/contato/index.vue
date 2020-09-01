@@ -98,7 +98,7 @@ export default {
         &__form{
             @include center;
             flex-direction: column;
-            margin-top: 1rem;
+            margin-top: .7rem;
 
             &-label{
                 font-size: .7rem;
@@ -123,17 +123,20 @@ export default {
                 width: 20rem;
                 border-radius: 3px;
                 resize: none;
-                height: 10rem;
+                height: 8rem;
             }
 
             &-btn{
                 background-color: $black;
+                font-family: 'Open Sans', sans-serif;
                 padding: .7rem 1.2rem;
                 color: $white;
                 outline: none;
                 width: 20rem;
                 margin-top: 1rem;
                 border-radius: 3px;
+                text-transform: uppercase;
+                font-weight: 300;
             }
         }
     }

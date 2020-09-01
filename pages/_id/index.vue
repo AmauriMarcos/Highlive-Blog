@@ -12,8 +12,12 @@
             </div>  
             <div class="article__content-body">
                <p v-html="content">{{content}}</p>
-            </div>        
+               
+            </div> 
+                
         </div>
+
+         <div id="hyvor-talk-view"></div>  
 
         <div class="article__bio">
             <div class="article__bio-intro">
@@ -52,9 +56,23 @@ const md = require('markdown-it')({
 .use(require('markdown-it-highlightjs'))
 .use(require('markdown-it-attrs'));
 
+//Hyvor Talks code
+var HYVOR_TALK_WEBSITE = 1833; // DO NOT CHANGE THIS
+    var HYVOR_TALK_CONFIG = {
+        url: `https://highlive.netlify.app/${this.$route.params.id}`,
+        id: this.$route.params.id
+    };
+console.log(this.$route.params.id)
 import axios from "axios";
 import Search from "../../components/Search";
 export default {
+    head: {
+    script: [
+      {
+        src: '//talk.hyvor.com/web-api/embed'
+      }
+    ]
+  },
     components: {
         Search
     },
