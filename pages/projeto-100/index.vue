@@ -12,7 +12,7 @@
 
         <div class="pages-cards">
             <div v-for="(dia, i) in dias" :key="i">
-                 <ProjetoCard  :id='dia.id' :title='dia.title' :image='dia.image[0].name' :category='category' :contador='projetoDia'></ProjetoCard>
+                 <ProjetoCard  :id='dia.id' :title='dia.title' :image='dia.image[0].name' :category='category' :contador='dia.dia' ></ProjetoCard>
             </div>
         </div>  
 
@@ -33,7 +33,7 @@ export default {
         }
     },
     async created(){
-        const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
+        const res = await axios.get("https://amauri-blog.herokuapp.com/categories?name=Projeto-100")
         const posts = res.data;
         posts.map((post) =>{
             this.dias = post.posts;

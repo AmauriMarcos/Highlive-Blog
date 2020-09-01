@@ -31,9 +31,9 @@ export default {
         flex-direction: column;
 
         &__img{
-            height: 345px;
-            width: 100%;
-            object-fit: cover;
+            height: 345px !important;
+            width: 100% !important;
+            object-fit: cover !important;
             
         }
 

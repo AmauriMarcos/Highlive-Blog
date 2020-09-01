@@ -1,13 +1,22 @@
 <template>
     <div class="search">
         <form @submit.prevent='submitSearch()' class="search__form">
-            <input class="search__input" type="text" placeholder="Pesquisar...">
+            <input class="search__input" type="text" placeholder="Pesquisar..." v-model="text">
         </form>
     </div>
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+            text: ''
+        }
+    },
+    methods: {
+        submitSearch(){
+            this.$router.push(`/results/${this.text}`)
+        }
+    }
 }
 </script>
 <style lang="scss">

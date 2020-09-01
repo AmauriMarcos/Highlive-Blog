@@ -59,13 +59,13 @@ export default {
             top: 0;
             right: 0;
             z-index: 20;
-            background-color: rgb(236, 235, 235);
+            background-color: rgba(197, 30, 37,.7);
             color: black;   
             @include center;
 
             & h2{
                 font-size: 1.3rem;
-                color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
                 font-family: 'Higher Jump';
             }
         }

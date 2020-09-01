@@ -80,6 +80,9 @@ export default {
 </script>
 
 <style lang="scss">
+    .agua{
+        width: 35rem !important;
+    }
   
     .article{
         padding: 2% 9.5%;
