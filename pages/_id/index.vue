@@ -11,13 +11,13 @@
                 <p>{{article.description}}</p>
             </div>  
             <div class="article__content-body">
-               <p v-html="content">{{content}}</p>     
-               <h2 class="comentario-titulo">Deixe um comentário</h2>     
-                <div class="fb-comments" data-href="https://highlive.netlify.app/" data-numposts="5" data-width="955"></div> 
+               <p v-html="content">{{content}}</p>  
+               <h2 class="comentario-titulo">Deixe um comentário</h2>
+               <Comments class="comments__component" :id='article.id' ></Comments>     
             </div> 
                 
         </div>
-        
+
         <div class="article__bio">
             <div class="article__bio-intro">
                 <p>E aí, tudo certo?</p>
@@ -55,13 +55,14 @@ const md = require('markdown-it')({
 .use(require('markdown-it-highlightjs'))
 .use(require('markdown-it-attrs'));
 
-
+import Comments from "../../components/Comments";
 import axios from "axios";
 import Search from "../../components/Search";
 export default {
 
     components: {
-        Search
+        Search,
+        Comments
     },
     data(){
         return{
@@ -71,21 +72,6 @@ export default {
             content: '',
             theID: this.$route.params.id
         }
-    },
-    mounted(){
-        this.init()    
-    },
-    methods: {
-        init (){
-        if (window.FB) {
-            window.FB.init({
-                appId      : process.env.APP_ID,
-                status     : true,
-                xfbml      : true,
-                version    : 'v3.3'
-            })
-        }
-    }
     },
     async created(){
         const res = await axios.get(`https://amauri-blog.herokuapp.com/posts/${this.$route.params.id}`)
@@ -102,10 +88,12 @@ export default {
 </script>
 
 <style lang="scss">
+
     .comentario-titulo{
         @include sub-titulo;
         transform: translateY(1rem);
     }
+
     .agua{
         width: 35rem !important;
     }
@@ -115,17 +103,6 @@ export default {
         display: grid;
         grid-template-columns: repeat(4,1fr);
         
-/* 
-        &__body{
-            grid-column: 1/4;
-            grid-row: 1/2;
-            transform: translateY(35rem);
-            padding-right: 5rem;
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.7rem;
-            font-size: 1.1rem;
-            align-self: flex-end;
-        } */
 
         &__content{
             grid-column: 1/4;
@@ -294,11 +271,6 @@ export default {
 
     p{
         margin: 1.5rem 0;          
-    }
-
-  
-    .space{
-        height: 800px;
     }
 
    

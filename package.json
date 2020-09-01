@@ -18,7 +18,8 @@
     "markdown-it-attrs": "^3.0.3",
     "markdown-it-highlightjs": "^3.2.0",
     "node-fetch": "^2.6.0",
-    "nuxt": "^2.14.0"
+    "nuxt": "^2.14.0",
+    "vue-disqus": "^4.0.1"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
