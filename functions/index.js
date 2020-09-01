@@ -11,14 +11,18 @@ exports.handler = async (event, context) => {
     return { statusCode: 500, body: msg }; 
   }; 
   try { 
-    const { email } = JSON.parse(event.body);
+    const { email} = JSON.parse(event.body);
     console.log(email);
     if (!email) { 
       return errorGen('Missing Email');
     } 
     const subscriber = { 
       email_address: email, 
-      status: 'subscribed', 
+      status: 'subscribed',
+    /*   merge_fields: {
+        FNAME: nome,
+        LNAME: sobrenome
+      }  */
     }; 
 
     console.log(subscriber);

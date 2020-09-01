@@ -4,7 +4,7 @@
         <form @submit.prevent='submitNewsletter' class="form">
             <input type="text" placeholder="Nome" v-model="form.nome" class="form__input">
             <input type="text" placeholder="Sobrenome" v-model="form.sobrenome" class="form__input">
-            <input type="email" placeholder="Email" v-model="form.email" class="form__input">
+            <input type="email" placeholder="Email" v-model="email" class="form__input">
             <button type="submit" class="form__button">Enviar</button>
         </form>
     </div>
@@ -16,19 +16,14 @@ export default {
     data(){
         return{
             form: [
-                {nome: '', sobrenome: '', email:''}
-            ]
+                {nome: '', sobrenome: ''}
+            ],
+            email: ''
         }
     },
     methods:{
         submitNewsletter(){
-            axios.post("https://highlive.netlify.app/.netlify/functions/index", 
-            {   
-                nome: this.form.nome,
-                sobrenome: this.form.sobrenome,
-                email: this.form.email
-
-            },
+            axios.post("https://highlive.netlify.app/.netlify/functions/index",  { email: this.email },
                 { headers : {
                     "Content-Type": "application/json"
                 }}
@@ -45,9 +40,9 @@ export default {
                 duration : 5000
             })  */
 
-            this.form.nome = '';
-            this.form.sobrenome = '';
-            this.form.email = ''
+            this.form.nome = ''
+            this.form.sobrenome = ''
+            this.email = ''
         
         } 
     }
