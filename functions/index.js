@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
     return { statusCode: 500, body: msg }; 
   }; 
   try { 
-    const { email} = JSON.parse(event.body);
+    const { email, nome, sobrenome} = JSON.parse(event.body);
     console.log(email);
     if (!email) { 
       return errorGen('Missing Email');
@@ -19,23 +19,23 @@ exports.handler = async (event, context) => {
     const subscriber = { 
       email_address: email, 
       status: 'subscribed',
-    /*   merge_fields: {
+      merge_fields: {
         FNAME: nome,
         LNAME: sobrenome
-      }  */
+      } 
     }; 
 
     console.log(subscriber);
     console.log(JSON.stringify(subscriber));
 
     const creds = `highlive-blog:${process.env.API_KEY_MAILCHIMP}`;
-    const response = await fetch(`https://us20.api.mailchimp.com/3.0/lists/${process.env.AUDIENCE_ID}/members/`, { 
+    const response = await fetch(`https://us17.api.mailchimp.com/3.0/lists/${process.env.AUDIENCE_ID}/members/`, { 
       method: 'POST', 
       headers: { 
         Accept: '*/*', 
         'Content-Type': 'application/json', 
         Authorization: `Basic ${base64.encode(creds)}`, }, 
-      body: JSON.stringify(subscriber), 
+        body: JSON.stringify(subscriber), 
      
     }); 
     const data = await response.json();
