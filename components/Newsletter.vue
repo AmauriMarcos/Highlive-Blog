@@ -1,8 +1,8 @@
 <template>
     <div class="newsletter">
         <h2 class="title-newsletter">Assine nossa newsletter</h2>
-        <form @submit.prevent='submitNewsletter()' class="form">
-            <input type="text" placeholder="Nome" v-model="form.name" class="form__input">
+        <form @submit.prevent='submitNewsletter' class="form">
+            <input type="text" placeholder="Nome" v-model="form.nome" class="form__input">
             <input type="text" placeholder="Sobrenome" v-model="form.sobrenome" class="form__input">
             <input type="email" placeholder="Email" v-model="form.email" class="form__input">
             <button type="submit" class="form__button">Enviar</button>
@@ -11,13 +11,45 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     data(){
         return{
             form: [
-                {name: '', sobrenome: '', email:''}
+                {nome: '', sobrenome: '', email:''}
             ]
         }
+    },
+    methods:{
+        submitNewsletter(){
+            axios.post("https://highlive.netlify.app/.netlify/functions/index", 
+            {   
+                nome: this.form.nome,
+                sobrenome: this.form.sobrenome,
+                email: this.form.email
+
+            },
+                { headers : {
+                    "Content-Type": "application/json"
+                }}
+            ).then((res) =>{
+                console.log(res.status)
+            }).catch(error => {console.log(error)})
+
+            /* this.$toasted.success("Thank you for your subscription !!!", { 
+                theme: "toasted-primary", 
+                position: "top-left", 
+                containerClass: 'myContainer',
+                fitToScreen: true,
+                fullWidth: true,
+                duration : 5000
+            })  */
+
+            this.form.nome = '';
+            this.form.sobrenome = '';
+            this.form.email = ''
+        
+        } 
     }
 }
 </script>
@@ -47,7 +79,7 @@ export default {
             border:none;
             border: 1px solid #ddd;
             margin-right: .5rem;
-            text-transform: uppercase;
+           /*  text-transform: uppercase; */
         }
 
         &__button{
