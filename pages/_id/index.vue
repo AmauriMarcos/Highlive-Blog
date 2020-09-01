@@ -16,7 +16,10 @@
                 
         </div>
 
-         <div id="hyvor-talk-view"></div>  
+        <div class="comments">
+            <div id="hyvor-talk-view"></div>  
+        </div>
+         
 
         <div class="article__bio">
             <div class="article__bio-intro">
@@ -101,6 +104,13 @@ export default {
 </script>
 
 <style lang="scss">
+.comments{
+    position: absolute;
+    z-index: 400;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
     .agua{
         width: 35rem !important;
     }
