@@ -32,7 +32,10 @@
             <h3 class="tag-title">Tags</h3> 
             <div class="article__bio-tags">
                 <div v-for="(tag, i) in tags" :key="i">
-                    <p class="tag">{{tag.name}}</p>
+                    <nuxt-link :to="`/relacionados/${tag.name}`" class="wrap-link">
+                        <p class="tag">{{tag.name}}</p>
+                    </nuxt-link>
+                    
                 </div>
             </div>  
 
@@ -81,23 +84,44 @@ export default {
         const result = await axios.get("https://amauri-blog.herokuapp.com/tags")
         this.tags = result.data
 
-         this.content = md.render(res.data.body);  
+        this.content = md.render(res.data.body);  
     },
     
 }
 </script>
 
 <style lang="scss">
+    @font-face {
+        font-family: 'Muli-Light';
+        src: url('~assets/fonts/Muli-Light.ttf') format('truetype');
+        font-style: normal;
+        font-weight: normal;      
+    }
+
 
     .comentario-titulo{
         @include sub-titulo;
         transform: translateY(1rem);
     }
+// BLOCO DE MARKDOWN //
+    .gif{
+        transform: translateX(15rem);
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .projeto-link{
+        font-weight: bold;
+        text-decoration: none;
+        color: rgba(0, 126, 255,.7);
+        cursor: pointer;
+        outline: none;
+    }
 
     .agua{
         width: 35rem !important;
     }
-  
+  // BLOCO DE MARKDOWN //
     .article{
         padding: 2% 9.5%;
         display: grid;
@@ -110,7 +134,7 @@ export default {
             height: 60vh;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-           
+            
            
 
             &-square{
@@ -157,6 +181,7 @@ export default {
 
                 & p{
                     @include paragrafo(left);
+                    font-family: 'Muli-Light', sans-serif;
                 }
 
             }
@@ -166,9 +191,13 @@ export default {
                 grid-row: 3/4;
                 margin-top: 5rem;
                 padding-right: 3rem;
-                font-family: 'Open Sans', sans-serif;
-                line-height: 1.7rem;
-                font-size: 1.1rem;
+                font-family: 'Muli-Light', sans-serif;
+                line-height: 32px;
+                font-size: 20px;
+                color: #8e8f88;
+                color: #666;
+
+                letter-spacing: .3px;
                 /*  border-right: 1px solid black; */
 
             }
@@ -179,6 +208,7 @@ export default {
             grid-column: 4/5;
             grid-row: 1/2;
             border-left: 1px solid black;
+            border-right: 1px solid black;
             display: flex;
             flex-direction: column;
           /*   justify-content: center; */
@@ -188,7 +218,7 @@ export default {
                  align-self: center;
 
                  & p {
-                    font-family: 'Open Sans', sans-serif;
+                    font-family: 'Muli-Light', sans-serif;
                     font-weight: 300;
                     margin-bottom: 1rem;
                     text-transform: uppercase;
@@ -215,8 +245,9 @@ export default {
                 font-size: .9rem;
                 line-height: 1.5rem;
 
+
                 & p {
-                    font-family: 'Playfair Display', serif;
+                    font-family: 'Muli-Light', sans-serif;
                     font-weight: 400;
                     text-align: center;
                     

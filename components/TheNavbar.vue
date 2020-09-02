@@ -2,33 +2,46 @@
     <div class="header">
        
        <div class="header__brand">
-            <nuxt-link to='/' class="wrap-link">
-                <h1 class="header__brand--title">High<span>live</span></h1>
-            </nuxt-link>
+           <!--  <nuxt-link to='/' class="wrap-link"> -->
+                <a href="/" class="header__brand--title">High<span>live</span></a>
+          <!--   </nuxt-link> -->
         </div>
        
          <div class='line'></div>
          <ul class="header__list" >     
-             <li class="header__item" v-for='(category, i) in categories' :key='i'>
+             <!-- <li class="header__item" v-for='(category, i) in categories' :key='i'>
                 <nuxt-link :to="`/${category.name}`" class="wrap-link"> 
                     <a href="#" class="header__link">{{category.name}}</a>
                 </nuxt-link>  
-            </li>    
+            </li> -->   
             <li class="header__item">
-                <a href="#" class="header__link">Sobre</a>
-            </li>   
+                <nuxt-link tag='a' to="/" class="wrap-link header__link active-link exact-active-link" >Home</nuxt-link> 
+            </li> 
+             <li class="header__item">
+                <nuxt-link tag='a' to="/games" class="wrap-link header__link active-link exact-active-link" >Games</nuxt-link> 
+            </li> 
+             <li class="header__item">
+                <nuxt-link tag='a' to="/programação" class="wrap-link header__link active-link exact-active-link" >Programação</nuxt-link> 
+            </li> 
+             <li class="header__item">
+                <nuxt-link tag='a' to="/cotidiano" class="wrap-link header__link active-link exact-active-link" >Cotidiano</nuxt-link> 
+            </li> 
+             <li class="header__item">
+                <nuxt-link tag='a' to="/projeto-100" class="wrap-link header__link active-link exact-active-link" >Projeto-100</nuxt-link> 
+            </li> 
+             <li class="header__item">
+                <nuxt-link tag='a' to="/sobre" class="wrap-link header__link active-link exact-active-link">Sobre</nuxt-link> 
+            </li>  
             <li class="header__item">
-                <nuxt-link to="/contato" class="wrap-link"> 
-                    <a href="#" class="header__link">Contato</a>
-                </nuxt-link> 
+                <nuxt-link tag='a' to="/contato" class="wrap-link header__link active-link exact-active-link">Contato</nuxt-link> 
             </li>   
         </ul>
     </div>
 </template>
-<script>
-import axios from "axios";
+<script> 
+/* import axios from "axios"; */
 export default {
-    data(){
+/*     data(){
         return{
             categories: []
         }
@@ -39,10 +52,21 @@ export default {
         myData.map((data) =>{
             this.categories.push(data)
         })
-    }
+    } */
 }
 </script>
 <style lang="scss">
+    .nuxt-link-active{
+        color: $black !important;
+        position: relative;
+        z-index: 5;
+
+    }
+   .nuxt-link-exact-active{
+        color:rgba(0, 126, 255,.7) !important;    
+         font-weight: bold;
+    }
+
     @font-face {
         font-family: 'Miya Wayne';
         src: url('~assets/fonts/Miya Wayne.ttf') format('truetype');
@@ -64,7 +88,10 @@ export default {
             font-family: 'Miya Wayne';
             font-size: 5rem;
             text-align: center;
-           
+            color: $black !important;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         span{
@@ -107,7 +134,7 @@ export default {
 
     &__item{
         margin-right: 1rem;
-        font-family: 'Open Sans', sans-serif;
+       font-family: 'Muli-Light', sans-serif;
        /*  font-family: 'Raleway', sans-serif; */
        font-weight: 300;
        text-transform: uppercase;

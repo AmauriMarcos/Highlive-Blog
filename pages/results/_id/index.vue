@@ -52,11 +52,6 @@ export default {
     }
 
     .palavra-pesquisada{
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.6rem;
-        color:rgba(0, 126, 255,.8);
-        font-weight: 300;
-        margin-left: .5rem;
-        text-transform: uppercase;
+        @include palavra-pesquisada
     }
 </style>

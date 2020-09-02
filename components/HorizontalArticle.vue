@@ -49,7 +49,7 @@ export default {
 
             &-category{
                 text-transform: uppercase;
-                font-family: 'Open Sans', sans-serif;
+                font-family: 'Muli-Light', sans-serif;
                 font-weight: 300;
                 text-align: center;
                 letter-spacing: 1.7px;
@@ -67,7 +67,7 @@ export default {
                 display: -webkit-box;
                 -webkit-line-clamp: 4; /* number of lines to show */
                 -webkit-box-orient: vertical;
-                                font-family: 'Open Sans', sans-serif;
+                font-family: 'Muli-Light', sans-serif;
                 text-align: center;
                 line-height: 1.8;
             }

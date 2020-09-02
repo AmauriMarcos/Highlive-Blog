@@ -2,11 +2,14 @@
     <div>
         <div class="projeto">
             <div class="projeto__call">
-                <h1>Projeto <span class="cem">100</span> Dias</h1>
-                <p>A ideia surgiu para me motivar e quem sabe, te motivar também.</p>
-                <p>
-                O objetivo é passar 100 dias comendo limpo, treinando regularmente e reclamando o menos possível, porque, bom, gordinho com fome já viu né!?
-                </p>
+                <div class="projeto__call-esquerda">
+                    <h1>Projeto <span class="cem">100</span> Dias</h1>
+                </div>
+                <div class="projeto__call-direita">
+                    <p>A ideia surgiu para me motivar e quem sabe, te motivar também.
+                         O objetivo é passar 100 dias comendo limpo, sem beber álcool e treinando regularmente. E aí ? Bora pro desafio também?
+                    </p>
+                </div>              
             </div>
         </div>
 
@@ -61,30 +64,50 @@ export default {
        background-repeat: no-repeat;
        background-position: center;
 
-       & h1{
-            font-family: 'Higher Jump';
-            font-size: 2.8rem;
-            text-align: center;
-            color: white;
-       }
+     
 
        &__call{
            height: 100%;
-           width: 70%;
-           background-color: rgba(197, 30, 37,.4);
+           width: 100%;
            padding: 2.5rem;
+           display: grid;
+           grid-template-columns: repeat(3,1fr);
+           align-items: center;
+           justify-items: center;
+           column-gap: 2rem;
 
-           & p{
-               margin: 0 !important;
-               font-family: 'Open Sans', sans-serif;
-               font-size: 1.5rem;
-               color: #fff;
+           &-esquerda{
+               grid-column: 1/3;
+
+                 & h1{
+                    font-family: 'Higher Jump';
+                    font-size: 3rem;
+                    text-align: center;
+                    color: white;
+                    transform: translateY(-4rem);
+                }
            }
+
+           &-direita{
+               grid-column: 3/4;
+
+                & p{
+                    margin: 0 !important;
+                    font-family: 'Muli-Light', sans-serif;
+                    font-size: 1.5rem;
+                    color: #fff;
+                    background-color: rgba(197, 30, 37,.4); 
+                    padding: 7rem 2rem;
+                    padding-top: 8.3rem;
+                    transform: translateY(-4.3rem);
+                    
+                }
+           }        
            
        }
 
        .cem{
-           color: black;
+           color: rgba(0, 126, 255,.9);
            font-size: 4rem;
        }
 
