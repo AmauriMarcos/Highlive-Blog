@@ -7,7 +7,7 @@
         <div class="horizontal__info">            
             <p class="horizontal__info-category">{{category}}</p>
             <h2 class="horizontal__info-title">{{title}}</h2>  
-            <p class="horizontal__info-body">{{body}}</p>
+            <p class="horizontal__info-body" v-html="content">{{content}}<p/>  
             <button class="horizontal__info-btn">Continuar lendo</button>           
         </div>     
     </div>   
@@ -15,8 +15,26 @@
 </template>
 
 <script>
+/* MARKDOWN CODE */
+const md = require('markdown-it')({
+    html: true,
+    linkify: true,
+    typographer: true,
+})
+.use(require('markdown-it-highlightjs'))
+.use(require('markdown-it-attrs'));
+import axios from "axios";
 export default {
-    props: ['title', 'image', 'body', 'category', 'id']
+    props: ['title', 'image', 'body', 'category', 'id'],
+    data(){
+        return{
+            content: '',
+        }
+    },
+    created(){
+        this.content = md.render(this.body); 
+     
+    }
 }
 </script>
 

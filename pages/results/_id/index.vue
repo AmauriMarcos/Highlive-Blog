@@ -13,16 +13,19 @@
         </div>
         <div class="no-results" v-if="empty">
             <h2 class="title-result">Nenhum resultado encontrado para: <span class="palavra-pesquisada">{{$route.params.id}}</span></h2>
+            <Search></Search>
         </div>
     </div>
 </template>
 
 <script>
 import HorizontalArticle from "../../../components/HorizontalArticle";
+import Search from "../../../components/Search";
 import axios from "axios";
 export default {
     components:{
-        HorizontalArticle
+        HorizontalArticle,
+        Search
     },
     data(){
         return{

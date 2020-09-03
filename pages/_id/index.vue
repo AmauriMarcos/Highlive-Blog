@@ -85,6 +85,7 @@ export default {
         this.tags = result.data
 
         this.content = md.render(res.data.body);  
+        
     },
     
 }
@@ -296,7 +297,6 @@ export default {
         border-top: 1px solid black;
         border-bottom: 1px solid black;
         width: 100%;
-        margin-left: 1rem;
         margin-top: 2rem;
     }
 
