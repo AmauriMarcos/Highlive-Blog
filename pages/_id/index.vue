@@ -126,6 +126,10 @@ export default {
         outline: none;
     }
 
+    .meu-gif{
+        width: 26rem;
+    }
+
     .agua{
         width: 35rem !important;
     }
@@ -134,7 +138,10 @@ export default {
         padding: 2% 9.5%;
         display: grid;
         grid-template-columns: repeat(4,1fr);
-        
+
+        @include respond(phone){
+            padding: 2% 5% !important;
+        }      
 
         &__content{
             grid-column: 1/4;
@@ -142,6 +149,10 @@ export default {
             height: 60vh;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+
+        @include respond(phone){
+            grid-column: 1/-1;
+        }
             
             &-square{
                 width: 15rem;
@@ -152,6 +163,12 @@ export default {
                 transform: translate(-1.5rem, 1.5rem);
                 align-self: flex-end;
                 z-index: 1;
+
+                @include respond(phone){
+                    width: 8rem;
+                    height: 8rem;
+                    transform: translate(-.7rem, .7rem);
+                }
                 
             }
 
@@ -161,6 +178,12 @@ export default {
                 grid-column: 1/3;
                 grid-row: 2/3;
                 z-index: 10;
+
+                @include respond(phone){
+                    width: 26rem;
+                    height: 22rem;
+                    position: relative;
+                }
                
 
                 & img{
@@ -180,23 +203,60 @@ export default {
                 z-index: 15;
                 width: 30rem;
 
+                @include respond(phone){
+                    grid-column: 1/2;
+                    grid-row: 3/4;
+                    transform: translate(2rem, -5rem);
+                    width: 25rem;
+                    height: 23rem;
+                    padding: 1.5rem;
+                    background-color: transparent;
+                }
+
                 &--date{
-                    font-size: .9rem;
+                    font-size: .8rem;
                     text-transform: uppercase;
                     background-color: rgba(0, 126, 255,.2);
                     width: 30%;
                     padding: .5rem 1rem;
                     color: $white;
+
+                    @include respond(phone){
+                        font-size: .6rem !important;
+                        padding: 0 !important;
+                        transform: translate(-2rem, -19.6rem) !important;
+                        padding: .3rem .5rem !important;
+                        color: #666;
+                    }
                 }
 
                 & h2{
                     
                     @include sub-titulo;
+
+                    @include respond(phone){
+                        font-size: 1.3rem !important;
+                        background-color: $white;
+                        transform: translate(-4.5rem, -9rem);
+                        z-index: 100;
+                        position: relative;
+                        box-shadow: 3px 3px 23px rgba(0,0,0.2);
+                        padding: .4rem .5rem !important;
+                    }
                 }
 
                 & p{
                     @include paragrafo(left);
                     font-family: 'Muli-Light', sans-serif;
+
+                    @include respond(phone){
+                        font-size: .9rem !important;
+                        background-color: rgb(211, 233, 255);
+                        transform: translate(2.3rem, -12rem);
+                        padding: 2rem;
+                        z-index: 50;
+                
+                    }
                 }
 
             }
@@ -209,11 +269,20 @@ export default {
                 font-family: 'Muli-Light', sans-serif;
                 line-height: 32px;
                 font-size: 20px;
-                color: #8e8f88;
+           /*      color: #8e8f88; */
                 color: #666;
 
                 letter-spacing: .3px;
                 /*  border-right: 1px solid black; */
+
+                @include respond(phone){
+                    padding: 0 !important;
+                    font-size: 18px;
+                    padding: .4rem !important;
+                    justify-self: flex-end;
+                    margin: 0 !important;
+                    transform: translateY(8rem);
+                }
 
             }
 
@@ -228,6 +297,10 @@ export default {
             flex-direction: column;
           /*   justify-content: center; */
            /*  align-items: center; */
+
+            @include respond(phone){
+                display: none;
+            }
 
             &-intro{
                  align-self: center;

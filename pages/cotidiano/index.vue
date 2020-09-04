@@ -48,5 +48,9 @@ export default {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+
+        @include respond(phone){
+            height: 10rem;
+        }
     }
 </style>

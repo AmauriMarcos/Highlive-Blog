@@ -38,6 +38,11 @@ export default {
         padding: 2% 9.5%;
         gap: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+
+        @include respond(phone){
+            padding: 2% 5%;
+            gap: .6rem;
+        }
     }
 
     .game{
@@ -48,5 +53,9 @@ export default {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+
+        @include respond(phone){
+            height: 10rem;
+        }
     }
 </style>

@@ -3,7 +3,7 @@
         <div class="projeto">
             <div class="projeto__call">
                 <div class="projeto__call-esquerda">
-                    <h1>Projeto <span class="cem">100</span> Dias</h1>
+                    <h1>Projeto <span class="cem">100</span></h1>
                 </div>
                 <div class="projeto__call-direita">
                     <p>A ideia surgiu para me motivar e quem sabe, te motivar também.
@@ -64,7 +64,10 @@ export default {
        background-repeat: no-repeat;
        background-position: center;
 
-     
+       @include respond(phone){
+            padding: 0;
+            margin-bottom: 2rem;
+        }
 
        &__call{
            height: 100%;
@@ -76,8 +79,17 @@ export default {
            justify-items: center;
            column-gap: 2rem;
 
+           @include respond(phone){
+               row-gap: 1rem;
+           }
+
            &-esquerda{
                grid-column: 1/3;
+
+                @include respond(phone){
+                    grid-column: 1/-1;
+                    grid-row: 1/2;
+                }
 
                  & h1{
                     font-family: 'Higher Jump';
@@ -85,11 +97,22 @@ export default {
                     text-align: center;
                     color: white;
                     transform: translateY(-4rem);
+                    position: relative;
+
+                    @include respond(phone){
+                        font-size: 2.3rem;
+                        transform: translateY(0);
+                    }
                 }
            }
 
            &-direita{
                grid-column: 3/4;
+               
+                @include respond(phone){
+                    grid-column: 1/-1;
+                    grid-row: 2/3;
+                }
 
                 & p{
                     margin: 0 !important;
@@ -100,6 +123,13 @@ export default {
                     padding: 7rem 2rem;
                     padding-top: 8.3rem;
                     transform: translateY(-4.3rem);
+        
+                    @include respond(phone){
+                         padding: 2rem 2.5rem;
+                         font-size: 1.2rem;
+                         transform: translateY(4rem);
+                         width: 100vw;
+                    }
                     
                 }
            }        
@@ -109,6 +139,14 @@ export default {
        .cem{
            color: rgba(0, 126, 255,.9);
            font-size: 4rem;
+
+           @include respond(phone){
+                font-size: 3rem;
+                position: absolute;
+                top: 5.5rem;
+                left: 3.5rem;     
+
+            }
        }
 
     }
@@ -118,5 +156,9 @@ export default {
         padding: 2% 9.5%;
         gap: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+
+        @include respond(phone){
+            padding: 2% 5% !important;
+        }
     }
 </style>

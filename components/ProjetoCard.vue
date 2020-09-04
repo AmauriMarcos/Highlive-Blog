@@ -45,6 +45,8 @@ export default {
             font-family: 'Open Sans', sans-serif;
             font-weight: 300;
             z-index: 3;
+
+            
         }
 
         &__title-card{
@@ -63,10 +65,19 @@ export default {
             color: black;   
             @include center;
 
+            @include respond(phone){
+                height: 4rem;
+                width: 4rem;
+            }
+
             & h2{
                 font-size: 1.3rem;
                 color: rgb(255, 255, 255);
                 font-family: 'Higher Jump';
+
+                @include respond(phone){
+                    font-size: 1rem;
+                }
             }
         }
     }
