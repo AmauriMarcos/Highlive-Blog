@@ -7,6 +7,7 @@
                 <img :src="`${url}`" alt="">
             </div>
             <div class="article__content-call">
+                <p class="article__content-call--date">{{date}} </p>
                 <h2>{{article.title}}</h2>
                 <p>{{article.description}}</p>
             </div>  
@@ -73,13 +74,19 @@ export default {
             url: '',
             tags: [],
             content: '',
-            theID: this.$route.params.id
+            date: ''
         }
     },
     async created(){
         const res = await axios.get(`https://amauri-blog.herokuapp.com/posts/${this.$route.params.id}`)
         this.article = res.data
         this.url = this.article.image[0].name
+
+        const d = new Date(this.article.date)
+        const ye = new Intl.DateTimeFormat('pt', { year: 'numeric' }).format(d)
+        const mo = new Intl.DateTimeFormat('pt', { month: 'short' }).format(d)
+        const da = new Intl.DateTimeFormat('pt', { day: '2-digit' }).format(d)
+        this.date = `${da} ${mo} ${ye}`    
 
         const result = await axios.get("https://amauri-blog.herokuapp.com/tags")
         this.tags = result.data
@@ -136,8 +143,6 @@ export default {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             
-           
-
             &-square{
                 width: 15rem;
                 height: 15rem;
@@ -174,6 +179,15 @@ export default {
                 transform: translate(-2rem, 12rem);
                 z-index: 15;
                 width: 30rem;
+
+                &--date{
+                    font-size: .9rem;
+                    text-transform: uppercase;
+                    background-color: rgba(0, 126, 255,.2);
+                    width: 30%;
+                    padding: .5rem 1rem;
+                    color: $white;
+                }
 
                 & h2{
                     

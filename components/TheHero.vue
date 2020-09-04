@@ -8,32 +8,7 @@
                 </div>
             </nuxt-link>
         </div>
-        <!-- <div class="destaques__principal">
-            <nuxt-link tag="a" :to='`/${destaques[0].id}`' class="wrap-link">
-            <img :src="`${destaques[0].image[0].name}`" alt="">
-            <div class="white-box">
-                <h1 class="white-box__title">{{destaques[0].title}}</h1>
-            </div>
-            </nuxt-link>
-            </div>
-        <div class="destaques__cima">
-            <nuxt-link tag="a" :to='`/${destaques[1].id}`' class="wrap-link">
-            <img :src="`${destaques[1].image[0].name}`" alt="">
-            <div class="white-box">
-                <h1 class="white-box__title">{{destaques[1].title}}</h1>
-            </div>
-            </nuxt-link>
-
-        </div>
-        <div class="destaques__baixo">
-            <nuxt-link tag="a" :to='`/${destaques[2].id}`' class="wrap-link">
-            <img :src="`${destaques[2].image[0].name}`" alt="">
-            <div class="white-box">
-                <h1 class="white-box__title">{{destaques[2].title}}</h1>
-            </div>
-            </nuxt-link>
-
-        </div> -->
+     
     </div>
 </template>
 
@@ -46,19 +21,6 @@ export default {
             
         }
     },
-    /* async fetch(){
-        const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
-        const news = res.data;
-        
-        news.slice(-3).map((destaque) =>{
-            this.destaques.push(destaque);
-            const firstID = this.destaques[0].id;
-            const secondID = this.destaques[1].id;
-            const thirdID = this.destaques[2].id;
-
-            console.log(firstID, secondID, thirdID);
-        })
-    }, */
     async created(){
         const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
         const data = res.data;
@@ -75,13 +37,31 @@ export default {
 
     .white-box{
         @include whiteBox;
-    
+
+        @include respond(phone){
+            background: transparent;
+        }
 
         &__title{
             @include sub-titulo;
             padding: 1rem 1.5rem;
             margin: 0;
             font-size: 1.5rem;
+            width: 120%;
+            transform: translateX(-1rem);
+            background-color: $white;
+
+            @include respond(phone){
+                line-height: 1.3;
+            }
+
+            @include respond(phone){
+                padding: .3rem .8rem;
+            }
+
+            @include respond(phone){
+                font-size: 1.2rem
+            }
         }
     }
 
@@ -101,6 +81,11 @@ export default {
     .full-height-box {
         grid-row: 1 / span 2;
         width: 100%;
+
+        @include respond(phone){
+            grid-column: 1/ span 2;
+            grid-row: 1;
+        }
         
     }
     .destaques{
@@ -109,64 +94,12 @@ export default {
         grid-template-rows: 250px 250px;
         grid-gap: 10px; /* OPTIONAL */
         padding: 2% 10%;
+
+        @include respond(phone){
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 250px;
+            padding: 2% 5%;
+            grid-gap: 7px;
+        }
     }
-        /* &__principal{
-            grid-column: 1/3;
-            grid-row: 1/3;
-            height: 60vh;
-            position: relative;
-            
-
-            & img{
-                @include imageOnGrid;               
-            }
-
-            
-    
-        }
-
-        &__cima{
-            grid-column: 3/4;
-            grid-row: 1/2;
-            position: relative;
-
-            & img{
-                @include imageOnGrid;
-            }
-
-            & .white-box{
-                @include whiteBox;
-
-                &__title{
-                    font-family: 'Playfair Display', serif;
-                    font-weight: 400;
-                    font-size: 1.3rem;
-                    padding: 1rem 2rem;
-                }
-            }
-        }
-
-        &__baixo{   
-            grid-column: 3/4;
-            grid-row: 2/3;
-            position: relative;
-
-            & img{
-                @include imageOnGrid;
-            }
-
-            & .white-box{
-                @include whiteBox;
-
-                &__title{
-                    font-family: 'Playfair Display', serif;
-                    font-weight: 400;
-                    font-size: 1.3rem;
-                    padding: 1rem 2rem;
-                }
-            }
-        }
-
-        
-    } */
 </style>
