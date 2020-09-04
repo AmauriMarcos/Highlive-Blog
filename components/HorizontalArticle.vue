@@ -49,10 +49,21 @@ export default {
         width: 80vw;
         margin: 0 auto;
 
+        @include respond(phone){
+            margin: 0;
+            width: 100%;
+            padding: 0;
+        }
+
         &__image-box{
      
             width: 15.38rem;
             height: 17.25rem;
+
+            @include respond(phone){
+                width: 12.5rem;
+                height: 12rem;
+            }
 
             & img{
                 width: 100%;
@@ -65,18 +76,30 @@ export default {
             width:100%;
             padding-left: 2.5rem;
 
+            @include respond(phone){
+                padding-left: 0;
+                margin-left: .5rem;
+            }
+
             &-category{
                 text-transform: uppercase;
                 font-family: 'Muli-Light', sans-serif;
                 font-weight: 300;
                 text-align: center;
                 letter-spacing: 1.7px;
+
+                @include respond(phone){
+                    font-size: .9rem !important;
+                }
             }
 
             &-title{
                 @include sub-titulo;
                 margin: .7rem 0;
 
+                @include respond(phone){
+                    font-size: 1.3rem !important;
+                }
             }
 
             &-body{
@@ -88,11 +111,19 @@ export default {
                 font-family: 'Muli-Light', sans-serif;
                 text-align: center;
                 line-height: 1.8;
+
+                @include respond(phone){
+                    font-size: .9rem !important;
+                }
             }
 
             &-btn{
                 @include buttonArticle;
                 margin: 1rem auto;
+
+                @include respond(phone){
+                    font-size: .8rem !important;
+                }
                 
                 &::after{
                      @include line-bottom;

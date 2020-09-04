@@ -114,6 +114,11 @@
        top: 1rem;
        width: 80vw;
        left: 8.8rem;
+
+       @include respond(phone){
+         left: 1.5rem;
+         width: 90%;
+       }
      }
 
      &::after{
@@ -122,6 +127,12 @@
         bottom: 1rem;
         width: 80vw;
         left: 8.8rem;
+
+        @include respond(phone){
+         left: 1.5rem;
+         width: 90%;
+         height: .5px;
+       }
      }
      
    }
@@ -157,10 +168,20 @@
      padding: 2% 9.5%;
      gap: 1rem;
      grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+
+      @include respond(phone){
+         padding: 2% 5%;
+         gap: .6rem;
+      }
+
    }
 
    #newsletter{
      padding: 0 9.5% 2% 9.5%;
+
+     @include respond(phone){
+       padding: 0 5% 2% 5%;
+     }
 
         &::before{
           @include line;
@@ -177,11 +198,20 @@
      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
      padding: 2% 9.5%;
      gap: 2rem;
+
+     @include respond(phone){
+       padding: 2% 5%;
+     }
    }
 
   .boxes-div{
     @include center;
     justify-content: space-around;
+
+    @include respond(phone){
+       flex-direction: column;
+     }
+
   }
    .thebox{
      width: 370px;
@@ -189,12 +219,22 @@
      display: inline-block;
      position: relative;
 
+     @include respond(phone){
+       width: 100%;
+       margin-bottom: 1rem;
+       height:14.375rem;
+     }
+
      & p{
        @include whiteBox;
        @include sub-titulo;
        padding: 0.7rem 1rem;
        width: 60%;
        text-transform: uppercase;
+
+        @include respond(phone){
+           font-size: 1.3rem;
+        }
      }
    }
 
@@ -215,6 +255,10 @@
      display: flex;
      flex-direction: column; 
      margin-top: 2%;
+
+      @include respond(phone){
+        padding: 2% 5%;
+      }
      
      &::after{
        @include line;

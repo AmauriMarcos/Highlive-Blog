@@ -62,10 +62,18 @@ export default {
         @include sub-titulo;
         font-size: 1.9rem;
         font-weight: 400;
+
+        @include respond(phone){
+            font-size: 1.5rem !important;
+        }
         
     }
     .form{
         @include center;
+
+        @include respond(phone){
+            flex-direction: column;
+        }
         
 
         &__input{
@@ -80,6 +88,12 @@ export default {
             border: 1px solid #ddd;
             margin-right: .5rem;
            /*  text-transform: uppercase; */
+
+           @include respond(phone){
+               width: 100%;
+               margin-bottom: .5rem;
+           }
+           
         }
 
         &__button{
@@ -92,6 +106,11 @@ export default {
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: .9px;
+
+            @include respond(phone){
+               width: 100%;
+               font-size: 12px;
+           }
         }
     }
 

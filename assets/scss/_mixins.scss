@@ -33,7 +33,7 @@
 
 @mixin line{
     content: "";
-    height: 1px;
+    height: .5px;
     background-color: rgb(0, 0, 0);
     display: inline-block;
     width: 100%;
