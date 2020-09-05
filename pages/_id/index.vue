@@ -9,7 +9,7 @@
             <div class="article__content-call">
                 <p class="article__content-call--date">{{date}} </p>
                 <h2>{{article.title}}</h2>
-                <p>{{article.description}}</p>
+                <p class="article__content-call--paragraph">{{article.description}}</p>
             </div>  
             <div class="article__content-body">
                <p v-html="content">{{content}}</p>  
@@ -180,8 +180,8 @@ export default {
                 z-index: 10;
 
                 @include respond(phone){
-                    width: 26rem;
-                    height: 22rem;
+                    width:35rem;
+                    height: 20rem;
                     position: relative;
                 }
                
@@ -237,7 +237,7 @@ export default {
                     @include respond(phone){
                         font-size: 1.3rem !important;
                         background-color: $white;
-                        transform: translate(-4.5rem, -9rem);
+                        transform: translate(1rem, 1rem);
                         z-index: 100;
                         position: relative;
                         box-shadow: 3px 3px 23px rgba(0,0,0.2);
@@ -245,7 +245,7 @@ export default {
                     }
                 }
 
-                & p{
+                &--paragraph{
                     @include paragrafo(left);
                     font-family: 'Muli-Light', sans-serif;
 
@@ -255,6 +255,7 @@ export default {
                         transform: translate(2.3rem, -12rem);
                         padding: 2rem;
                         z-index: 50;
+                        display: none;
                 
                     }
                 }
