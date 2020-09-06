@@ -180,8 +180,8 @@ export default {
                 z-index: 10;
 
                 @include respond(phone){
-                    width:26rem;
-                    height: 18rem;
+                    width:24rem;
+                    height: 16rem;
                     position: relative;
                 }
                
