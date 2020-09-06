@@ -180,8 +180,8 @@ export default {
                 z-index: 10;
 
                 @include respond(phone){
-                    width:35rem;
-                    height: 20rem;
+                    width:26rem;
+                    height: 18rem;
                     position: relative;
                 }
                
@@ -209,7 +209,7 @@ export default {
                     transform: translate(2rem, -5rem);
                     width: 25rem;
                     height: 23rem;
-                    padding: 1.5rem;
+                    padding: 2.5rem;
                     background-color: transparent;
                 }
 
@@ -224,9 +224,13 @@ export default {
                     @include respond(phone){
                         font-size: .6rem !important;
                         padding: 0 !important;
-                        transform: translate(-2rem, -19.6rem) !important;
+                        transform: translate(-3rem, -15rem) !important;
                         padding: .3rem .5rem !important;
                         color: #666;
+                        font-family: 'Muli-Light', sans-serif;
+                        background-color:rgb(211, 233, 255);
+                        text-align: center;
+                        font-weight: bold;
                     }
                 }
 
@@ -237,10 +241,10 @@ export default {
                     @include respond(phone){
                         font-size: 1.3rem !important;
                         background-color: $white;
-                        transform: translate(1rem, 1rem);
+                        transform: translate(1rem, -4rem);
                         z-index: 100;
                         position: relative;
-                        box-shadow: 3px 3px 23px rgba(0,0,0.2);
+                        box-shadow: 3px 3px 7px rgba(0,0,0.2);
                         padding: .4rem .5rem !important;
                     }
                 }
