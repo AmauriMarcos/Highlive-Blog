@@ -209,7 +209,7 @@ export default {
                     transform: translate(2rem, -5rem);
                     width: 25rem;
                     height: 23rem;
-                    padding: 2.5rem;
+                    padding: 3rem;
                     background-color: transparent;
                 }
 
@@ -283,7 +283,7 @@ export default {
                 @include respond(phone){
                     padding: 0 !important;
                     font-size: 18px;
-                    padding: .4rem !important;
+                    padding:.8rem !important;
                     justify-self: flex-end;
                     margin: 0 !important;
                     transform: translateY(8rem);
