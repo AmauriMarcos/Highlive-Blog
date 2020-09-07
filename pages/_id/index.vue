@@ -130,7 +130,7 @@ body{
     }
 
     .meu-gif{
-        width: 23rem;
+        width: 100%;
         height: 17rem;
         @include center;
     }
@@ -189,7 +189,7 @@ body{
                 z-index: 10;
 
                 @include respond(phone){
-                    width:24rem;
+                    width: 100%;
                     height: 16rem;
                     position: relative;
                 }
