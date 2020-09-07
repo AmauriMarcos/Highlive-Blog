@@ -99,6 +99,9 @@ export default {
 </script>
 
 <style lang="scss">
+body{
+    overflow-x: hidden;
+}
     @font-face {
         font-family: 'Muli-Light';
         src: url('~assets/fonts/Muli-Light.ttf') format('truetype');
