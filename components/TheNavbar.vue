@@ -135,23 +135,31 @@ export default {
             top: 3.5rem;
             right: 3rem;
             z-index: 500;
-            height: 4px;
-            border: 3px;
+            height: 5px;
+            border-radius: 5px;
             width: 10%;
             display: inline-block;
             background-color: rgba(0, 126, 255,.7);
+            cursor: pointer;
 
             &::before{
                 content: '';
                 background-color: rgba(0, 126, 255,.7);
-                width: 85%;
-                height: 4px;
+                width:60%;
+                height: 5px;
+                border-radius: 5px;
                 display: inline-block;   
 
             }
 
             &::after{
-
+                content: '';
+                background-color: rgba(0, 126, 255,.7);
+                width: 83%;
+                height: 5px;
+                border-radius: 5px; 
+                display: inline-block; 
+                transform: translateY(-.5rem);
             }
         }
     }
