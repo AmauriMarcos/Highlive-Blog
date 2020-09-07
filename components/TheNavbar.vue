@@ -145,7 +145,7 @@ export default {
                 content: '';
                 background-color: rgba(0, 126, 255,.7);
                 width: 85%;
-                height: 3px;
+                height: 4px;
                 display: inline-block;   
 
             }
@@ -197,8 +197,8 @@ export default {
         flex-direction: column;
 
         @include respond(phone){
-          
-           
+           box-shadow: 1px 1px 7px rgba(0, 0, 0,.2); 
+           margin-bottom: 1.5rem;
         }
 
         &__brand{

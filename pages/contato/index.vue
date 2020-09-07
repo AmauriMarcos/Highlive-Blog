@@ -91,7 +91,7 @@ export default {
         flex-direction: column;
 
         @include respond(phone){
-            height: 100vw;
+            height: 100%;
         }
 
         &__title{
