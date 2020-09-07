@@ -206,7 +206,7 @@ export default {
 
         @include respond(phone){
            box-shadow: 1px 1px 7px rgba(0, 0, 0,.2); 
-           margin-bottom: 1.5rem;
+           margin-bottom: 1rem;
         }
 
         &__brand{

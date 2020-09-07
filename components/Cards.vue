@@ -38,7 +38,7 @@ export default {
             @include respond(phone){
                 height: 250px !important;
                 position: relative;
-                z-index: 1;
+                
             }
         }
 
@@ -65,7 +65,7 @@ export default {
 
             @include respond(phone){
                 font-size: 1.3rem !important;
-                transform: translateY(1rem);
+                transform: translateY(-2rem);
                 margin-bottom: 0 !important;
                 margin-top: 2rem;
             }
