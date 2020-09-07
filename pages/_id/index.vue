@@ -100,7 +100,11 @@ export default {
 
 <style lang="scss">
 body{
-    overflow-x: hidden;
+
+    @include respond(phone){
+        overflow-x: hidden;
+    }
+    
 }
     @font-face {
         font-family: 'Muli-Light';
@@ -130,9 +134,13 @@ body{
     }
 
     .meu-gif{
-        width: 100%;
+        width: 30rem;
         height: 17rem;
         @include center;
+
+        @include respond(phone){
+            width: 100%;
+        }
     }
 
     .agua{

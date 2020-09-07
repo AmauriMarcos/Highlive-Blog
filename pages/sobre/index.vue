@@ -26,16 +26,9 @@
         <div class="about__text">
             <div class="about__text-cima">
                 <h2 class="about__text-cima--title">Sobre Mim</h2>
-                <p class="about__text-cima--text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem qui eos iure ullam, dolore, nam magnam nemo at impedit cum, voluptatem debitis ipsa enim sit similique autem expedita distinctio dolores!</p>
+                <p class="about__text-cima--text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem qui eos iure ullam, dolore, nam magnam nemo at impedit cum, voluptatem debitis ipsa enim sit similique autem expedita distinctio dolores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ducimus beatae aperiam nihil quas odit obcaecati maxime assumenda laboriosam, quasi impedit vitae itaque dolore ea labore voluptatem molestias culpa neque?</p>
             </div>
-            <div class="about__text-esquerda">
-                <h2 class="about__text-esquerda--title">O BLog</h2>
-                <p class="about__text-esquerda--text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem qui eos iure ullam, dolore, nam magnam nemo at impedit cum, voluptatem debitis ipsa enim sit similique autem expedita distinctio dolores!</p>
-            </div>
-            <div class="about__text-direita">
-                <h2 class="about__text-direita--title">Contato</h2>
-                <p class="about__text-direita--text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem qui eos iure ullam, dolore, nam magnam nemo at impedit cum, voluptatem debitis ipsa enim sit similique autem expedita distinctio dolores!</p>
-            </div>
+    
             
         </div>
     </div>
@@ -56,6 +49,8 @@ export default {
         justify-items: center;
         gap: 3rem;
 
+        padding: 2% 7%;
+
         &__gallery{
             grid-column: 1/4;
             display: grid;
@@ -64,6 +59,12 @@ export default {
             gap: .7rem;
             width: 100%;
             height: 100%;
+
+            @include respond(phone){
+                grid-column: 1/-1;
+                grid-row: 1/2;
+                gap: 1rem;
+            }
 
             &--1{
                 grid-column: 1/6;
@@ -128,6 +129,11 @@ export default {
             display: grid;
             grid-template-columns: repeat(4,1fr);
             column-gap: 2rem;
+
+            @include respond(phone){
+                grid-column: 1/-1;
+                grid-row: 2/3;
+            }
 
             &-cima{
                 grid-column: 1/-1;
