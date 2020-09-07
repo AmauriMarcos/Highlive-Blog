@@ -8,9 +8,41 @@
         </div>
        
          <div class='line'></div>
+
+
          <div class="mobile-menu">
-             <p class="mobile-menu__name">MENU</p>
+             <input type="checkbox"  id="name" name="name" class="mobile-menu__name">
+             <label for="name" class="mobile-menu__name">MENU</label>
+             <label for="name" class="mobile-menu__xis" v-if="!show">X</label>
+
+             <nav class="mobile-menu__nav">
+                 <ul class="mobile-menu__nav-list" >      
+                    <li class="mobile-menu__nav-item">
+                        <nuxt-link tag='a' to="/" class="wrap-link header__link active-link exact-active-link" >Home</nuxt-link> 
+                    </li> 
+                    <li class="mobile-menu__nav-item">
+                        <nuxt-link tag='a' to="/games" class="wrap-link header__link active-link exact-active-link" >Games</nuxt-link> 
+                    </li> 
+                    <li class="mobile-menu__nav-item">
+                        <nuxt-link tag='a' to="/programação" class="wrap-link header__link active-link exact-active-link" >Programação</nuxt-link> 
+                    </li> 
+                    <li class="mobile-menu__nav-item">
+                        <nuxt-link tag='a' to="/cotidiano" class="wrap-link header__link active-link exact-active-link" >Cotidiano</nuxt-link> 
+                    </li> 
+                    <li class="mobile-menu__nav-item">
+                        <nuxt-link tag='a' to="/projeto-100" class="wrap-link header__link active-link exact-active-link" >Projeto-100</nuxt-link> 
+                    </li> 
+                    <li class="mobile-menu__nav-item">
+                        <nuxt-link tag='a' to="/sobre" class="wrap-link header__link active-link exact-active-link">Sobre</nuxt-link> 
+                    </li>  
+                    <li class="mobile-menu__nav-item">
+                        <nuxt-link tag='a' to="/contato" class="wrap-link header__link active-link exact-active-link">Contato</nuxt-link> 
+                    </li>   
+                </ul>
+             </nav>
          </div>
+
+
          <ul class="header__list" >      
             <li class="header__item">
                 <nuxt-link tag='a' to="/" class="wrap-link header__link active-link exact-active-link" >Home</nuxt-link> 
@@ -37,26 +69,34 @@
     </div>
 </template>
 <script> 
-/* import axios from "axios"; */
+
 export default {
-/*     data(){
+    data(){
         return{
-            categories: []
+            show: 'false'
         }
     },
-    async created(){
-        const res = await axios.get("https://amauri-blog.herokuapp.com/categories")
-        const myData = res.data;
-        myData.map((data) =>{
-            this.categories.push(data)
+    mounted(){
+        const menu = document.querySelector(".mobile-menu__name");
+        const xis  = document.querySelector(".mobile-menu__xis");
+
+        menu.addEventListener("click", () =>{
+            this.show = true
         })
-    } */
+
+        xis.addEventListener("click", () =>{
+            this.show = false
+        })
+    }
 }
 </script>
 <style lang="scss">
+    .show{
+        display: block;
+    }
     .mobile-menu{
         display: none;
-    
+          
         @include respond(phone){
             @include center;
             display: block;
@@ -64,7 +104,49 @@ export default {
             border-bottom: 1px solid black;
             width: 90vw;
             margin: 2rem 0 !important;
+            transition: all .8s ease-in;
                    
+        }
+
+        &__xis{
+            position: absolute;
+            top: 1rem;
+            right: 2rem; 
+            z-index: 150;
+            font-family: 'Muli-Light', sans-serif;
+        }
+
+        &__nav{
+            background-color: rgba(0, 126, 255,.9);
+            width: 55%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            z-index: 100;
+            transform: translateX(20rem);
+             transition: all .2s ease-in-out;
+          
+            
+
+            &-list{
+                list-style: none;
+                position: relative;
+                 margin-top: 5rem;
+                
+            }
+
+            &-item{
+                margin-left: 2rem;
+                margin-bottom: 1rem;
+                font-family: 'Muli-Light', sans-serif;
+                /*  font-family: 'Raleway', sans-serif; */
+                font-weight: 300;
+                text-transform: uppercase;
+                font-size: 1rem;
+                font-weight: bold;
+
+            }
         }
 
         &__name{
@@ -75,15 +157,30 @@ export default {
             letter-spacing: .4rem;
         }
     }
+
+    input[type='checkbox']{
+        display: none;
+    }
+
+    input[type='checkbox']:checked ~ nav{
+        transform: translateX(0);
+    }
+
+    
     .nuxt-link-active{
         color: $black !important;
         position: relative;
         z-index: 5;
 
+
     }
    .nuxt-link-exact-active{
         color:rgba(0, 126, 255,.7) !important;    
          font-weight: bold;
+
+         @include respond(phone){
+             color: $white !important;
+         }
     }
 
     @font-face {
