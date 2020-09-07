@@ -127,7 +127,9 @@ export default {
     }
 
     .meu-gif{
-        width: 26rem;
+        width: 23rem;
+        height: 17rem;
+        @include center;
     }
 
     .agua{
@@ -140,7 +142,7 @@ export default {
         grid-template-columns: repeat(4,1fr);
 
         @include respond(phone){
-            padding: 2% 5% !important;
+            padding: 2% 9% !important;
         }      
 
         &__content{
@@ -241,7 +243,7 @@ export default {
                     @include respond(phone){
                         font-size: 1.3rem !important;
                         background-color: $white;
-                        transform: translate(1rem, -4rem);
+                        transform: translate(-3rem, -4rem);
                         z-index: 100;
                         position: relative;
                         box-shadow: 3px 3px 7px rgba(0,0,0.2);
@@ -284,9 +286,8 @@ export default {
                     padding: 0 !important;
                     font-size: 18px;
                     padding:.8rem !important;
-                    justify-self: flex-end;
                     margin: 0 !important;
-                    transform: translateY(8rem);
+                    transform: translateY(6rem);
                 }
 
             }

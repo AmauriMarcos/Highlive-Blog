@@ -92,12 +92,20 @@ export default {
             text-decoration: none;
             font-weight: bold;
             cursor: pointer;
+
+            @include respond(phone){
+                font-size: 4rem;
+            }
         }
 
         span{
             
             font-size: 7rem;
-             position: relative;
+            position: relative;
+
+             @include respond(phone){
+                font-size: 6rem;
+            }
 
             &:before{
                 content: "";
@@ -109,6 +117,11 @@ export default {
                 position: absolute;
                 top: .3rem;
                 left: -.5rem;
+
+                @include respond(phone){
+                     height: 75px;
+                     width: 75px;
+                 }
             }           
         }      
     }
@@ -122,6 +135,9 @@ export default {
         justify-content: space-around;
         width: 80vw;
         padding: 1rem 2rem;  
+        @include respond(phone){
+            display: none;
+        }
        
     }
 
