@@ -146,6 +146,8 @@ body{
 
         @include respond(phone){
             padding: 2% 9% !important;
+            @include center;
+            flex-direction: column;
         }      
 
         &__content{
@@ -157,6 +159,7 @@ body{
 
         @include respond(phone){
             grid-column: 1/-1;
+            height: 100%;
         }
             
             &-square{
@@ -173,6 +176,7 @@ body{
                     width: 8rem;
                     height: 8rem;
                     transform: translate(-.7rem, .7rem);
+                    display: none;
                 }
                 
             }
@@ -246,10 +250,10 @@ body{
                     @include respond(phone){
                         font-size: 1.3rem !important;
                         background-color: $white;
-                        transform: translate(-3rem, -4rem);
+                        transform: translate(-2rem, -4rem);
                         z-index: 100;
                         position: relative;
-                        box-shadow: 3px 3px 7px rgba(0,0,0.2);
+                        box-shadow: 1px 1px 3px rgba(0,0,0.2);
                         padding: .4rem .5rem !important;
                     }
                 }
@@ -286,9 +290,8 @@ body{
                 /*  border-right: 1px solid black; */
 
                 @include respond(phone){
-                    padding: 0 !important;
+                    padding: 0 3rem !important;
                     font-size: 18px;
-                    padding:.8rem !important;
                     margin: 0 !important;
                     transform: translateY(6rem);
                 }
