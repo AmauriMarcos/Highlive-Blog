@@ -27,9 +27,7 @@
             <div class="about__text-cima">
                 <h2 class="about__text-cima--title">Sobre Mim</h2>
                 <p class="about__text-cima--text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem qui eos iure ullam, dolore, nam magnam nemo at impedit cum, voluptatem debitis ipsa enim sit similique autem expedita distinctio dolores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ducimus beatae aperiam nihil quas odit obcaecati maxime assumenda laboriosam, quasi impedit vitae itaque dolore ea labore voluptatem molestias culpa neque?</p>
-            </div>
-    
-            
+            </div>            
         </div>
     </div>
 </template>

@@ -90,9 +90,20 @@ export default {
         @include center;
         flex-direction: column;
 
+        @include respond(phone){
+            height: 100vw;
+        }
+
         &__title{
             @include sub-titulo;
             font-size: 2.3rem;
+
+            @include respond(phone){
+                font-size: 1.8rem;
+                font-family: 'Muli-Light', sans-serif;
+                font-weight: none;
+                transform: translateY(1rem);
+            }
         }
 
         &__form{
@@ -103,7 +114,7 @@ export default {
             &-label{
                 font-size: .7rem;
                 transform: translate(-7.9rem);
-                font-family: 'Open Sans', sans-serif;
+                font-family: 'Muli-Light', sans-serif;
                 font-size: 300;
             }
 
@@ -128,7 +139,7 @@ export default {
 
             &-btn{
                 background-color: $black;
-                font-family: 'Open Sans', sans-serif;
+                font-family: 'Muli-Light', sans-serif;
                 padding: .7rem 1.2rem;
                 color: $white;
                 outline: none;

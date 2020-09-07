@@ -8,12 +8,10 @@
         </div>
        
          <div class='line'></div>
-         <ul class="header__list" >     
-             <!-- <li class="header__item" v-for='(category, i) in categories' :key='i'>
-                <nuxt-link :to="`/${category.name}`" class="wrap-link"> 
-                    <a href="#" class="header__link">{{category.name}}</a>
-                </nuxt-link>  
-            </li> -->   
+         <div class="mobile-menu">
+             <p class="mobile-menu__name">MENU</p>
+         </div>
+         <ul class="header__list" >      
             <li class="header__item">
                 <nuxt-link tag='a' to="/" class="wrap-link header__link active-link exact-active-link" >Home</nuxt-link> 
             </li> 
@@ -56,6 +54,27 @@ export default {
 }
 </script>
 <style lang="scss">
+    .mobile-menu{
+        display: none;
+    
+        @include respond(phone){
+            @include center;
+            display: block;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            width: 90vw;
+            margin: 2rem 0 !important;
+                   
+        }
+
+        &__name{
+            @include center;
+            padding: .5rem 0;
+            margin: 0 !important;
+            font-family: 'Muli-Light', sans-serif;
+            letter-spacing: .4rem;
+        }
+    }
     .nuxt-link-active{
         color: $black !important;
         position: relative;
@@ -135,8 +154,9 @@ export default {
         justify-content: space-around;
         width: 80vw;
         padding: 1rem 2rem;  
+
         @include respond(phone){
-            display: none;
+           display: none;
         }
        
     }
@@ -146,6 +166,10 @@ export default {
         position: absolute;
         width: 80vw;
         top: 9.3rem;
+
+        @include respond(phone){
+           display: none;
+        }
     }
 
     &__item{
