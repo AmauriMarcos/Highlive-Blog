@@ -145,7 +145,7 @@ body{
         grid-template-columns: repeat(4,1fr);
 
         @include respond(phone){
-            padding: 2% 9% !important;
+     /*        padding: 2% 9% !important; */
             @include center;
             flex-direction: column;
         }      
@@ -290,10 +290,10 @@ body{
                 /*  border-right: 1px solid black; */
 
                 @include respond(phone){
-                    padding: 0 3rem !important;
+                    padding: 0 2rem !important;
                     font-size: 18px;
-                    margin: 0 !important;
-                    transform: translateY(6rem);
+                    margin: 4.5rem 0 0 0 !important;
+                    /* transform: translateY(6rem); */
                 }
 
             }
