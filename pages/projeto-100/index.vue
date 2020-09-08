@@ -42,7 +42,8 @@ export default {
             this.dias = post.posts;
         })
 
-    }
+    },
+    
 }
 </script>
 

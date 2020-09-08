@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/google-gtag": "^1.0.4",
     "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/vuetify": "^1.11.2",

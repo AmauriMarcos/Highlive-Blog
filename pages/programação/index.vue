@@ -29,7 +29,8 @@ export default {
         posts.map((post) =>{
             this.programacaoPosts = post.posts;
         })
-    }
+    },
+    
 }
 </script>
 <style lang="scss">

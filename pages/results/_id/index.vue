@@ -36,14 +36,14 @@ export default {
     async created(){
        const res = await axios.get(`https://amauri-blog.herokuapp.com/posts?title_contains=${this.$route.params.id}`)
             
-            if(typeof res.data !== 'undefined' && res.data.length > 0){
-                this.results = res.data
-                this.empty = false;
-            }else{             
-                this.empty = true
-            }
-                   
-    }
+        if(typeof res.data !== 'undefined' && res.data.length > 0){
+            this.results = res.data
+            this.empty = false;
+        }else{             
+            this.empty = true
+        }                
+    },
+    
    
 }
 </script>

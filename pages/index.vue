@@ -96,7 +96,8 @@
 
       this.horizontals  = request3.data.slice(0,5)
 
-    }
+    },
+    
 
 }
 </script>

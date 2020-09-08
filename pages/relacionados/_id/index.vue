@@ -34,7 +34,8 @@ export default {
            this.results = post.posts
        }) 
    
-    }
+    },
+    
    
 }
 </script>

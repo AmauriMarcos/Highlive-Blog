@@ -29,7 +29,8 @@ export default {
         posts.map((post) =>{
             this.games = post.posts;
         })
-    }
+    },
+    
 }
 </script>
 <style lang="scss">

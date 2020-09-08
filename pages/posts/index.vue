@@ -22,7 +22,8 @@ export default {
     async created(){
         const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
         this.posts = res.data;
-    }
+    },
+    
 }
 </script>
 <style lang="scss">

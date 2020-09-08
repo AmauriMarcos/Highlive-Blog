@@ -42,6 +42,7 @@ export default {
             
         }
     },
+    
     methods:{
         encode(data){
             return Object.keys(data)

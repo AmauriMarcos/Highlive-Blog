@@ -77,6 +77,7 @@ export default {
             date: ''
         }
     },
+    
     async created(){
         const res = await axios.get(`https://amauri-blog.herokuapp.com/posts/${this.$route.params.id}`)
         this.article = res.data

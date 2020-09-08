@@ -1,14 +1,13 @@
 <template>
     <div class="destaques">
-        <div v-for="(destaque, i) in destaques" class="box" :class="{'full-height-box': i == 0}" :key="i">
-            <nuxt-link tag='a' :to="`/${destaque.id}`" class="wrap-link">
-                <img :src="`${destaque.image[0].name}`" alt="" class="box-img">
-                <div class="white-box">
+        <div v-for="(destaque, i) in destaques" class="box" :class="{'full-height-box': i == 0}" :key="i" >
+            <nuxt-link tag='a' :to="`/${destaque.id}`" class="wrap-link" >
+                <img :src="`${destaque.image[0].name}`" alt="" class="box-img" @click='buttonClicked()'>
+                <div class="white-box" @click='buttonClicked()'>
                      <h1 class="white-box__title">{{destaque.title}}</h1>
                 </div>
             </nuxt-link>
         </div>
-     
     </div>
 </template>
 
@@ -25,6 +24,15 @@ export default {
         const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
         const data = res.data;
         this.destaques= data.slice(-3);     
+    },
+    methods: {
+        buttonClicked(){
+            this.$gtag('event', 'latest-release-click', {
+            'event_category': 'documentation',
+            'event_label': 'Latest Release Button Clicked',
+            'value': 1
+            });
+        }
     }
 }
 </script>
