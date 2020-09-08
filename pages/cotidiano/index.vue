@@ -5,7 +5,7 @@
         </div>
         <div class="pages-cards">
             <div v-for="(cotidianoPost, i) in cotidianoPosts" :key="i">
-                 <Cards :id='cotidianoPost.id' :title='cotidianoPost.title' :image='cotidianoPost.image[0].name' :category='category'></Cards>
+                 <Cards :slug='cotidianoPost.slug' :id='cotidianoPost.id' :title='cotidianoPost.title' :image='cotidianoPost.image[0].name' :category='category'></Cards>
             </div>
         </div>       
     </div>

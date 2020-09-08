@@ -5,7 +5,7 @@
         </div>
         <div class="pages-cards">
             <div v-for="(game, i) in games" :key="i">
-                 <Cards :id='game.id' :title='game.title' :image='game.image[0].name' :category='category'></Cards>
+                 <Cards :slug='game.slug' :id='game.id' :title='game.title' :image='game.image[0].name' :category='category'></Cards>
             </div>
         </div>       
     </div>
