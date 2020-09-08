@@ -27,9 +27,9 @@ export default {
     },
     methods: {
         buttonClicked(){
-            this.$gtag('event', 'latest-release-click', {
-            'event_category': 'documentation',
-            'event_label': 'Latest Release Button Clicked',
+            this.$gtag('event', 'clicou_em_destaques', {
+            'event_category': 'artigos',
+            'event_label': 'Artigo em Destaques foi Clicado',
             'value': 1
             });
         }
