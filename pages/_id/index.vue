@@ -79,20 +79,29 @@ export default {
     },
     
     async created(){
-        const res = await axios.get(`https://amauri-blog.herokuapp.com/posts/${this.$route.params.id}`)
+        const res = await axios.get(`https://amauri-blog.herokuapp.com/posts?slug=${this.$route.params.id}`)
         this.article = res.data
-        this.url = this.article.image[0].name
+        this.article.map((art) =>{
+            this.url = art.image[0].name
 
-        const d = new Date(this.article.date)
-        const ye = new Intl.DateTimeFormat('pt', { year: 'numeric' }).format(d)
-        const mo = new Intl.DateTimeFormat('pt', { month: 'short' }).format(d)
-        const da = new Intl.DateTimeFormat('pt', { day: '2-digit' }).format(d)
-        this.date = `${da} ${mo} ${ye}`    
+            this.article = art
+
+            const d = new Date(art.date)
+            const ye = new Intl.DateTimeFormat('pt', { year: 'numeric' }).format(d)
+            const mo = new Intl.DateTimeFormat('pt', { month: 'short' }).format(d)
+            const da = new Intl.DateTimeFormat('pt', { day: '2-digit' }).format(d)
+            this.date = `${da} ${mo} ${ye}`    
+
+            this.content = md.render(art.body);  
+        })
+      /*   this.url = this.article.image[0].name */
+
+       
 
         const result = await axios.get("https://amauri-blog.herokuapp.com/tags")
         this.tags = result.data
 
-        this.content = md.render(res.data.body);  
+       
         
     },
     

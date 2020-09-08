@@ -2,7 +2,7 @@
     <div>
         <div class="pages-cards">
             <div v-for="(post, i) in posts" :key="i">
-                 <Cards :id='post.id' :title='post.title' :image='post.image[0].name' :category='post.categories[0].name'></Cards>
+                 <Cards :slug='post.slug' :id='post.id' :title='post.title' :image='post.image[0].name' :category='post.categories[0].name'></Cards>
             </div>
         </div>       
     </div>

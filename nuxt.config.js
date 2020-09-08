@@ -78,7 +78,7 @@ export default {
       }
     },
     debug: true, // enable to track in dev mode
-    disableAutoPageTrack: true, // disable if you don't want to track each page route with router.afterEach(...).
+    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
     additionalAccounts: [{
       id: 'AW-XXXX-XX', // required if you are adding additional accounts
       config: {

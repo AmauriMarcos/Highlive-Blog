@@ -15,7 +15,7 @@
 
         <div class="pages-cards">
             <div v-for="(dia, i) in dias" :key="i">
-                 <ProjetoCard  :id='dia.id' :title='dia.title' :image='dia.image[0].name' :category='category' :contador='dia.dia' ></ProjetoCard>
+                 <ProjetoCard :slug='dia.slug' :id='dia.id' :title='dia.title' :image='dia.image[0].name' :category='category' :contador='dia.dia' ></ProjetoCard>
             </div>
         </div>  
 
@@ -41,7 +41,6 @@ export default {
         posts.map((post) =>{
             this.dias = post.posts;
         })
-
     },
     
 }

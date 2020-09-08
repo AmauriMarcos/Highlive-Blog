@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="`/${id}`" class="wrap-link">
+    <nuxt-link :to="`/${slug}`" class="wrap-link">
         <div class="cards">
             <img class="cards__img" :src="`${image}`" alt="">
             <p class="cards__category">{{category}}</p>
@@ -11,7 +11,7 @@
 <script>
 import axios from "axios";
 export default {
-    props: ['title', 'category','image', 'id'],
+    props: ['title', 'category','image', 'id', 'slug'],
     data(){
         return{
             cards: []

@@ -1,7 +1,7 @@
 <template>
     <div class="destaques">
         <div v-for="(destaque, i) in destaques" class="box" :class="{'full-height-box': i == 0}" :key="i" >
-            <nuxt-link tag='a' :to="`/${destaque.id}`" class="wrap-link" >
+            <nuxt-link tag='a' :to="`/${destaque.slug}`" class="wrap-link" >
                 <img :src="`${destaque.image[0].name}`" alt="" class="box-img" @click='buttonClicked()'>
                 <div class="white-box" @click='buttonClicked()'>
                      <h1 class="white-box__title">{{destaque.title}}</h1>

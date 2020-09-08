@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="`/${id}`" class="wrap-link">
+    <nuxt-link :to="`/${slug}`" class="wrap-link">
         <div class="cards">
             <div class="cards__contador">
                 <h2>{{contador}}</h2>
@@ -14,7 +14,7 @@
 <script>
 import axios from "axios";
 export default {
-    props: ['title', 'category','image', 'id', 'contador'],
+    props: ['title', 'category','image', 'id', 'contador', 'slug'],
 }
 </script>
 

@@ -3,6 +3,7 @@
         <h2 v-if="!empty" class="title-result">Todos os resultados para: <span class="palavra-pesquisada">{{$route.params.id}}</span></h2>
         <div v-for="result in results" :key='result.id' class="category-id-page__article" >
             <HorizontalArticle
+                :slug='result.slug'
                 :title='result.title'
                 :body='result.body'
                 :image='result.image[0].name'

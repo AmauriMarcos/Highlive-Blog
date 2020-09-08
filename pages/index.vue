@@ -6,7 +6,7 @@
 
     <section id="white-articles">
       <div v-for='(article, i) in articles' :key='i'>
-         <nuxt-link :to="`/${article.id}`" class="wrap-link">
+         <nuxt-link :to="`/${article.slug}`" class="wrap-link">
             <div class="bloco-article">
               <h2>{{article.title}}</h2>
               <p>{{article.description}}</p>
@@ -18,7 +18,7 @@
 
     <section id="cards">
         <div v-for="(card, i) in cards " :key='i'>
-            <Cards :title='card.title' :category='card.categories[0].name' :image='card.image[0].name' :id='card.id'></Cards>
+            <Cards :slug='card.slug' :title='card.title' :category='card.categories[0].name' :image='card.image[0].name' :id='card.id'></Cards>
         </div>
     </section>
 
@@ -50,6 +50,7 @@
       <div v-for="(horizontal, i) in horizontals" :key="i" class="horizontal-box">
          <HorizontalArticle
             :title='horizontal.title'
+            :slug='horizontal.slug'
             :image='horizontal.image[0].name'
             :body='horizontal.body'
             :category='horizontal.categories[0].name'

@@ -32,7 +32,7 @@
                         <nuxt-link tag='a' to="/projeto-100" class="wrap-link header__link active-link exact-active-link" >Projeto-100</nuxt-link> 
                     </li> 
                     <li class="mobile-menu__nav-item">
-                        <nuxt-link tag='a' to="/sobre" class="wrap-link header__link active-link exact-active-link">Sobre</nuxt-link> 
+                        <nuxt-link @click.native='linkClicked()' tag='a' to="/sobre" class="wrap-link header__link active-link exact-active-link">Sobre</nuxt-link> 
                     </li>  
                     <li class="mobile-menu__nav-item">
                         <nuxt-link tag='a' to="/contato" class="wrap-link header__link active-link exact-active-link">Contato</nuxt-link> 
@@ -59,7 +59,7 @@
                 <nuxt-link tag='a' to="/projeto-100" class="wrap-link header__link active-link exact-active-link" >Projeto-100</nuxt-link> 
             </li> 
              <li class="header__item">
-                <nuxt-link tag='a' to="/sobre" class="wrap-link header__link active-link exact-active-link">Sobre</nuxt-link> 
+                <nuxt-link @click.native='linkClicked()' tag='a' to="/sobre" class="wrap-link header__link active-link exact-active-link">Sobre</nuxt-link> 
             </li>  
             <li class="header__item">
                 <nuxt-link tag='a' to="/contato" class="wrap-link header__link active-link exact-active-link">Contato</nuxt-link> 
@@ -75,6 +75,15 @@ export default {
             show: 'false'
         }
     },
+    methods:{
+        linkClicked(){
+             this.$gtag('event', 'clicou_em_sobre', {
+                'event_category': 'sobre',
+                'event_label': 'Pagina sobre foi visitada',
+                'value': 1
+            });
+        }
+    }
 
 }
 </script>

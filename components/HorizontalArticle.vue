@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="`/${id}`" class="wrap-link">
+    <nuxt-link :to="`/${slug}`" class="wrap-link">
     <div class="horizontal">
         <div class="horizontal__image-box">
             <img :src="`${image}`" alt="" >
@@ -25,7 +25,7 @@ const md = require('markdown-it')({
 .use(require('markdown-it-attrs'));
 import axios from "axios";
 export default {
-    props: ['title', 'image', 'body', 'category', 'id'],
+    props: ['title', 'image', 'body', 'category', 'id', 'slug'],
     data(){
         return{
             content: '',
