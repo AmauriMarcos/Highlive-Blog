@@ -2,7 +2,7 @@
     <div class="destaques">
         <div v-for="(destaque, i) in destaques" class="box" :class="{'full-height-box': i == 0}" :key="i" >
             <nuxt-link tag='a' :to="`/${destaque.slug}`" class="wrap-link" >
-                <img :src="`${destaque.image[0].name}`" alt="" class="box-img" @click='buttonClicked()'>
+                <img :src="`https://amauri-blog.herokuapp.com${destaque.image[0].formats.medium.url}`" alt="" class="box-img" @click='buttonClicked()'>
                 <div class="white-box" @click='buttonClicked()'>
                      <h1 class="white-box__title">{{destaque.title}}</h1>
                 </div>
@@ -17,13 +17,20 @@ export default {
     data(){
         return{
             destaques: [],
+            url: []
             
         }
     },
     async created(){
         const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
         const data = res.data;
+
         this.destaques= data.slice(-3);     
+        this.destaques.map((myUrl) =>{
+           this.url.push(myUrl.image[0].name)
+        /*    console.log(myUrl.image[0].formats.small.name) */
+          /*  myUrl.image[0].name */
+        })
     },
     methods: {
         buttonClicked(){

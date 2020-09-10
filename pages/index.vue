@@ -79,7 +79,9 @@
       return{
         articles: [],
         cards: [],
-        horizontals: []
+        horizontals: [],
+        formats: [],
+        urls: []
       }
     },
     async created(){
@@ -91,15 +93,17 @@
       const articles = request1.data.slice(0,1)
       this.articles  = articles
 
-     request2.data.slice(3,6).map((card) =>{
+     request2.data.slice(3,6).map((card,i) =>{
           this.cards.push(card)
+        
       })
 
       this.horizontals  = request3.data.slice(0,5)
+      console.log(this.formats)
 
     },
     
-
+  
 }
 </script>
 <style lang="scss">

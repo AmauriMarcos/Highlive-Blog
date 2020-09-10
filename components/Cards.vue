@@ -21,6 +21,7 @@ export default {
         const res = await axios.get("https://amauri-blog.herokuapp.com/posts")
         const articles = res.data.slice(3,6)
         this.cards = articles
+
     }
 }
 </script>
