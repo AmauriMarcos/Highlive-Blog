@@ -129,6 +129,18 @@ body{
         transform: translateY(1rem);
     }
 // BLOCO DE MARKDOWN //
+
+    .blog-front{
+        border-radius: 5px;
+        width: 100%;
+
+    }
+
+    .grande{
+        width: 500px;
+        height: 370px;
+    }
+
     .gif{
         transform: translateX(15rem);
         width: 20rem;
