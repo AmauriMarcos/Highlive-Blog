@@ -137,8 +137,8 @@ body{
     }
 
     .grande{
-        width: 500px;
-        height: 370px;
+        width: 100%;
+        height: 90%;
     }
 
     .gif{
