@@ -130,15 +130,33 @@ body{
     }
 // BLOCO DE MARKDOWN //
 
+.strapi-first-img{
+    width: 100%;
+    border-radius: 5px;
+}
+
     .blog-front{
         border-radius: 5px;
         width: 100%;
 
+        @include respond(phone){
+          height: 90px;
+          width: 450px;
+          transform: translateX(-6.4rem);
+          margin: 0 3rem;
+        }
+
     }
 
     .grande{
-        width: 100%;
-        height: 90%;
+        border-radius: 5px;
+        width: 600px;
+        height: 70%;
+
+        @include respond(phone){
+            width: 100%;
+            height: 90%;
+        }
     }
 
     .gif{
