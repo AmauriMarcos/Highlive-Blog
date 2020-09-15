@@ -94,6 +94,7 @@ export default {
         @include respond(phone){
            box-shadow: 1px 1px 7px rgba(0, 0, 0,.2); 
            margin-bottom: 1rem;
+           padding: .8rem;
         }
 
         &__brand{
@@ -112,8 +113,9 @@ export default {
             cursor: pointer;
 
             @include respond(phone){
-                font-size: 3rem;
-                transform: translate(-7rem, 1rem);
+                font-size: 2.7rem;
+                transform: translateX(-7rem);
+                @include center;
             }
         }
 
@@ -123,7 +125,7 @@ export default {
             position: relative;
 
              @include respond(phone){
-                font-size: 4.5rem;
+                font-size: 3.2rem;
             }
 
             &:before{
@@ -134,12 +136,12 @@ export default {
                 border-radius: 50%;
                 display: inline-block;
                 position: absolute;
-                top: .3rem;
-                left: -.6rem;
+                top: .1rem;
+                left: -.4rem;
 
                 @include respond(phone){
-                     height: 60px;
-                     width: 60px;
+                     height: 50px;
+                     width: 50px;
                  }
             }           
         }      

@@ -52,19 +52,10 @@ export default {
         const menuIcon = document.querySelector(".hamburger-menu");
         const navbar = document.querySelector(".navbar");
 
-
         menuIcon.addEventListener("click", () =>{
             navbar.classList.toggle("change")
         })
 
-        window.addEventListener('click', function(e){
-            
-            if (document.querySelector('.navbar').contains(e.target)){
-                navbar.classList.add("change")
-            } else{
-                navbar.classList.remove("change")
-            }
-        })
     }
 }
 </script>
@@ -85,7 +76,7 @@ export default {
         width: 35px;
         height: 30px;
         position: fixed;
-        top: 50px;
+        top: 30px;
         right: 50px;
         cursor: pointer;
         display: flex;
@@ -139,6 +130,7 @@ export default {
 
     .nav-item{
         margin: 25px;
+        transform: translateY(-2rem);
 
         @include respond(phone){
             color: black;
