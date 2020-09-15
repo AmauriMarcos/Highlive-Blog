@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <section id="hero">
        <TheHero></TheHero>
     </section>  
@@ -58,11 +59,11 @@
          ></HorizontalArticle>
       </div>
     </section>
-
-  </div> 
+    </div>
 </template>
 
 <script>
+ 
   import axios from "axios";
   import HorizontalArticle from "../components/HorizontalArticle";
   import TheHero from "../components/TheHero";

@@ -9,39 +9,6 @@
        
          <div class='line'></div>
 
-
-         <div class="mobile-menu">
-             <input type="checkbox"  id="name" name="name" class="mobile-menu__name">
-             <label for="name" class="mobile-menu__name"></label>
-
-             <nav class="mobile-menu__nav">
-                 <ul class="mobile-menu__nav-list" >      
-                    <li class="mobile-menu__nav-item">
-                        <nuxt-link tag='a' to="/" class="wrap-link header__link active-link exact-active-link" >Home</nuxt-link> 
-                    </li> 
-                    <li class="mobile-menu__nav-item">
-                        <nuxt-link tag='a' to="/games" class="wrap-link header__link active-link exact-active-link" >Games</nuxt-link> 
-                    </li> 
-                    <li class="mobile-menu__nav-item">
-                        <nuxt-link tag='a' to="/programação" class="wrap-link header__link active-link exact-active-link" >Programação</nuxt-link> 
-                    </li> 
-                    <li class="mobile-menu__nav-item">
-                        <nuxt-link tag='a' to="/cotidiano" class="wrap-link header__link active-link exact-active-link" >Cotidiano</nuxt-link> 
-                    </li> 
-                    <li class="mobile-menu__nav-item">
-                        <nuxt-link tag='a' to="/projeto-100" class="wrap-link header__link active-link exact-active-link" >Projeto-100</nuxt-link> 
-                    </li> 
-                    <li class="mobile-menu__nav-item">
-                        <nuxt-link @click.native='linkClicked()' tag='a' to="/sobre" class="wrap-link header__link active-link exact-active-link">Sobre</nuxt-link> 
-                    </li>  
-                    <li class="mobile-menu__nav-item">
-                        <nuxt-link tag='a' to="/contato" class="wrap-link header__link active-link exact-active-link">Contato</nuxt-link> 
-                    </li>   
-                </ul>
-             </nav>
-         </div>
-
-
          <ul class="header__list" >      
             <li class="header__item">
                 <nuxt-link tag='a' to="/" class="wrap-link header__link active-link exact-active-link" >Home</nuxt-link> 
@@ -70,6 +37,7 @@
 <script> 
 
 export default {
+ 
     data(){
         return{
             show: 'false'
@@ -91,96 +59,6 @@ export default {
     .show{
         display: block;
     }
-    .mobile-menu{
-        display: none;
-          
-        @include respond(phone){
-            @include center;
-            display: block;
-            width: 90vw;
-            margin: 1rem 0 !important;
-            transition: all .8s ease-in;                  
-        }
-
-        &__nav{
-            background-color: rgba(0, 0, 0,.85);
-            width: 51%;
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100%;
-            z-index: 100;
-            transform: translateX(20rem);
-             transition: all .2s ease-in-out;
-           
-
-            &-list{
-                list-style: none;
-                position: relative;
-                 margin-top: 10rem;
-                
-            }
-
-            &-item{
-                margin-left: 2rem;
-                margin-bottom: 1rem;
-                font-family: 'Muli-Light', sans-serif;
-                /*  font-family: 'Raleway', sans-serif; */
-                font-weight: 300;
-                text-transform: uppercase;
-                font-size: 1rem;
-                font-weight: bold;
-               
-               & a{
-                    color: $white;
-               }
-
-            }
-        }
-
-        &__name{
-            @include center;
-            position: absolute;
-            top: 3.5rem;
-            right: 3rem;
-            z-index: 500;
-            height: 5px;
-            border-radius: 5px;
-            width: 10%;
-            display: inline-block;
-            background-color: rgba(0, 126, 255,.7);
-            cursor: pointer;
-
-            &::before{
-                content: '';
-                background-color: rgba(0, 126, 255,.7);
-                width:60%;
-                height: 5px;
-                border-radius: 5px;
-                display: inline-block;   
-
-            }
-
-            &::after{
-                content: '';
-                background-color: rgba(0, 126, 255,.7);
-                width: 83%;
-                height: 5px;
-                border-radius: 5px; 
-                display: inline-block; 
-                transform: translateY(-.5rem);
-            }
-        }
-    }
-
-    input[type='checkbox']{
-        display: none;
-    }
-
-    input[type='checkbox']:checked ~ nav{
-        transform: translateX(0);
-    }
-
     
     .nuxt-link-active{
         color: $black !important;
@@ -188,7 +66,7 @@ export default {
         z-index: 5;
 
         @include respond(phone){
-             color:rgba(99, 133, 167, 0.7) !important;
+             color:rgb(0, 0, 0) !important;
             
          }
 
@@ -197,9 +75,9 @@ export default {
         color:rgba(0, 126, 255,.7) !important;    
          font-weight: bold;
 
-         /* @include respond(phone){
-             color: $white !important;
-         } */
+         @include respond(phone){
+             color: rgb(255, 255, 255)  !important;
+         }
     }
 
     @font-face {

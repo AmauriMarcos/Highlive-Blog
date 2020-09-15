@@ -68,14 +68,8 @@ export default {
 
             @include respond(phone){
                 line-height: 1.3;
-            }
-
-            @include respond(phone){
-                padding: .3rem .8rem;
-            }
-
-            @include respond(phone){
-                font-size: 1.2rem
+                padding: .5rem .8rem;
+                font-size: 1rem
             }
         }
     }
