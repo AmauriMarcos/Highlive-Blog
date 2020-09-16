@@ -1,7 +1,7 @@
 <template>
     <div class="header">
        
-       <div class="header__brand">
+        <div class="header__brand">
            <!--  <nuxt-link to='/' class="wrap-link"> -->
                 <a href="/" class="header__brand--title">High<span>live</span></a>
           <!--   </nuxt-link> -->

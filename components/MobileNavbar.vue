@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="container-mobile">
-            <nav class="navbar">
+            <nav class="navbar" tabindex="0">
                 <div class="hamburger-menu">
                     <div class="line line-1"></div>
                     <div class="line line-2"></div>
@@ -54,8 +54,11 @@ export default {
 
         menuIcon.addEventListener("click", () =>{
             navbar.classList.toggle("change")
-        })
+        });
 
+       navbar.addEventListener("blur", () =>{
+           navbar.classList.remove("change")
+       }, true);
     }
 }
 </script>
@@ -67,7 +70,8 @@ export default {
             display: block !important;
             width: 100%;
             height: 100%;
-            background-color: blueviolet;
+          /*   height: 100vh; */
+          /*   background-color: blueviolet; */
         }
 
     }
