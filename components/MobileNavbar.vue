@@ -111,7 +111,7 @@ export default {
     .navbar{
         width: 260px;
         height: 100%;
-        background-color:rgb(0, 128, 255) ;
+        background-color:#99CBFF !important;
         position: fixed;
         top: 0;
         right: -300px;
