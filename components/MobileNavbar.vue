@@ -56,9 +56,9 @@ export default {
             navbar.classList.toggle("change")
         });
 
-       navbar.addEventListener("blur", () =>{
-           navbar.classList.remove("change")
-       }, true);
+        navbar.addEventListener("blur", () =>{
+            navbar.classList.remove("change")
+        }, true);
     }
 }
 </script>
@@ -118,6 +118,7 @@ export default {
         z-index: 1000;
         @include center;
         border-radius: 45% 0 0 50%;
+        outline: none;
         transition: right .8s cubic-bezier(.32,2,.55,.27);
 
     }
