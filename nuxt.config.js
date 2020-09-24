@@ -44,6 +44,7 @@ export default {
   */
   plugins: [
     '@/plugins/disqus',
+    {src: '~/plugins/flash-message.js', ssr: false}
   ],
   /*
   ** Auto import components

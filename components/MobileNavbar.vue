@@ -111,8 +111,9 @@ export default {
     .navbar{
         width: 260px;
         height: 100%;
-        background-color:#99CBFF !important;
+        background-color:#99CBFF;
         position: fixed;
+        box-shadow:  1px 3px 2px 0 #000;
         top: 0;
         right: -300px;
         z-index: 1000;

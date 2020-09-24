@@ -13,6 +13,7 @@
     "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/vuetify": "^1.11.2",
+    "@smartweb/vue-flash-message": "^0.6.5",
     "axios": "^0.19.2",
     "base-64": "^0.1.0",
     "dotenv": "^8.2.0",

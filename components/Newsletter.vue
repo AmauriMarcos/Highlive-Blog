@@ -1,5 +1,9 @@
 <template>
     <div class="newsletter">
+        <client-only class="message">
+            <FlashMessage :position="'left top'"></FlashMessage>
+        </client-only>
+        
         <h2 class="title-newsletter">Assine nossa newsletter</h2>
         <form @submit.prevent='submitNewsletter' class="form">
             <input type="text" placeholder="Nome" v-model="form.nome" class="form__input">
@@ -45,6 +49,11 @@ export default {
                 duration : 5000
             })  */
 
+            this.flashMessage.success({
+                title: 'Obrigado por assinar nossa Newsletter!',
+                message: 'De agora em diante você ficará por dentro de todas as novidades do blog.',
+            });
+
             this.form.nome = '';
             this.form.sobrenome = '';
             this.form.email = ''
@@ -55,6 +64,12 @@ export default {
 </script>
 
 <style lang="scss">
+    .message{
+        position: absolute;
+        z-index: 5000;
+        top: 0;
+        left: 30px;
+    }
     .newsletter{
         padding: 5% 0;
     }

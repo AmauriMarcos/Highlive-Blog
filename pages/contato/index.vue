@@ -79,6 +79,11 @@ export default {
                 });  */                       
             })
             .catch((err) => console.log(`Error: ${err}`));
+
+             this.flashMessage.success({
+                title: 'Mensagem enviada com sucesso!',
+                message: 'Obrigado por separar um pouco do seu tempo para nos enviar uma mensagem. Daremos um retorno em breve.',
+            });
             
         }
     }
