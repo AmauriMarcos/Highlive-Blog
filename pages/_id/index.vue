@@ -14,9 +14,8 @@
             <div class="article__content-body">
                <p v-html="content">{{content}}</p>  
                <h2 class="comentario-titulo">Deixe um comentário</h2>
-               <Comments class="comments__component" :id='article.id' ></Comments>     
-            </div> 
-                
+               <Comments class="comments__component" :id='article.id' ></Comments>               
+            </div>                 
         </div>
 
         <div class="article__bio">
@@ -46,6 +45,7 @@
             
             <div class="space"></div>  
         </div>
+          
     </div>
 </template>
 
@@ -59,14 +59,16 @@ const md = require('markdown-it')({
 .use(require('markdown-it-highlightjs'))
 .use(require('markdown-it-attrs'));
 
+import Footer from "../../components/Footer"; 
 import Comments from "../../components/Comments";
 import axios from "axios";
 import Search from "../../components/Search";
 export default {
-
+    layout:'FakeFooter',
     components: {
         Search,
-        Comments
+        Comments,
+        Footer
     },
     data(){
         return{
@@ -191,13 +193,16 @@ body{
         padding: 2% 9.5%;
         display: grid;
         grid-template-columns: repeat(4,1fr);
+        height: 100vh;
+   
 
         @include respond(phone){
      /*        padding: 2% 9% !important; */
             @include center;
             flex-direction: column;
-        }      
-
+        }     
+        
+    
         &__content{
             grid-column: 1/4;
             grid-row: 1/2;
@@ -331,6 +336,7 @@ body{
                 font-family: 'Muli-Light', sans-serif;
                 line-height: 32px;
                 font-size: 20px;
+                position: relative;
            /*      color: #8e8f88; */
                 color: #666;
 

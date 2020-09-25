@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div class="the-footer">
         <p>Copyright @ Highlive Blog</p>
     </div>
 </template>
@@ -11,7 +11,8 @@ export default {
 </script>
 
 <style lang="scss">
-    .footer{
+    .the-footer{
+        z-index: 1000;
         height: 7rem;
         width: 100%;
         @include center;
